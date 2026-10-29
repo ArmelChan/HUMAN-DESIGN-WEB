@@ -64,6 +64,30 @@ npm run build      # 輸出至 dist/（相對路徑，可放任何靜態主機�
 
 所有測例的外部比對欄位為 `pending_external_validation`。更新快照：`UPDATE_SNAPSHOT=1 npx vitest run src/lib/validation.test.ts`。
 
+## 個人報告、反思與同意（report-1.0.0）
+
+- 時間準確度分三種：精確、約略（±15–120 分鐘）、只知道日期。只知道日期時，計算當地全天每 30 分鐘的結果，只採用全天不變的部分，不以中午或任何單一時刻代表出生時間（`src/lib/dayRange.ts`）。
+- 輸入時即時顯示 UTC 換算預覽，含夏令時間的重複與不存在時刻提示。
+- 報告七段（`src/lib/report.ts`）：計算結果、體系解釋、自我觀察與反思、一般健康與心理教育（不依圖表個人化，轉述 WHO）、象徵性人生方向、限制、來源與版權。報告產生器不接受姓名、性別、職業；反思回應不會改變報告。
+- 反思：符合／不符合／不確定，加上例子與反例；不計分、不是量表。
+- 匯出：HTML 下載與純文字複製，固定保留首尾聲明、限制、驗證狀態、來源與使用範圍（`src/lib/exportReport.ts`）。
+- 提問指引（`src/lib/safety.ts`，`#/ask`）：固定規則，沒有 AI。對診斷、用藥、死亡預測、重大決定給出界線回覆；危機訊號會停止解讀，提示聯絡當地緊急服務，不編造電話。
+- 同意（`src/lib/consent.ts`）：條款接受、本機保存、AI 外傳、行銷四項分開；預設都不勾選；本版本沒有 AI 與行銷功能，因此後兩項只有說明、沒有勾選框。條款版本變更時需要重新接受。
+
+## 條款、隱私與版權（草稿）
+
+`#/terms`、`#/privacy`、`#/copyright` 三個頁面都是**待法律審閱的草稿**，未生效。營運者欄位未填，公開上線前的阻擋事項見 `docs/OPERATOR_TODO.md`。
+第三方素材登錄在 `src/data/legal/assets.ts`；開源授權全文由 `npm run licenses` 從 node_modules 產生。
+
+## 瀏覽器測試
+
+```bash
+npm run build && npx vite preview --port 4173 --strictPort &
+NODE_PATH=$(npm root -g) node e2e/site.e2e.cjs
+```
+
+需要全域安裝的 Playwright（本專案未列為相依套件）。
+
 ## 尚未完成
 
 - 36 條通道與 64 個閘門的詳細解讀、閘門六爻內容（目前只有結構資訊）。

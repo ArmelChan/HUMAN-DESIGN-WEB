@@ -8,7 +8,7 @@ import { computeChart } from '../lib/chart';
 import { localToUtc } from '../lib/timezone';
 import { formatZodiac, gateStartLongitude } from '../lib/mandala';
 import { ASTRONOMY_ENGINE } from '../lib/ephemeris';
-import { DISCLAIMER } from '../data/disclaimer';
+import { CONSISTENCY_NOTE, DISCLAIMER } from '../data/disclaimer';
 
 function StatusChip({ status }: { status: RuleStatus | 'pending_external_validation' | 'internal' | 'third_party_transcribed' }) {
   const label =
@@ -100,6 +100,7 @@ export function VerificationPage() {
       </h1>
       <Callout title="使用前說明">
         <p>{DISCLAIMER}</p>
+        <p>{CONSISTENCY_NOTE}</p>
       </Callout>
 
       <section className="section" aria-labelledby="layers-h">
@@ -129,8 +130,7 @@ export function VerificationPage() {
                 <th scope="row">個人解讀與應用</th>
                 <td>文字是否忠於來源、清楚標示限制？</td>
                 <td>
-                  「我覺得很像」不能單獨作為驗證方法；這正是巴納姆效應帶來的風險（見
-                  <a href="https://www.britannica.com/science/Barnum-Effect" target="_blank" rel="noopener noreferrer">
+                  「我覺得很像」不能單獨作為驗證方法；這正是巴納姆效應帶來的風險（見<a href="https://www.britannica.com/science/Barnum-Effect" target="_blank" rel="noopener noreferrer">
                     Britannica「Barnum Effect」
                   </a>
                   ）。
@@ -140,8 +140,7 @@ export function VerificationPage() {
           </table>
         </div>
         <p className="muted">
-          Jovian Archive 是「人類圖體系如何定義自身」的原始來源，例如人格取出生時刻、設計取太陽回推約 88° 的時刻。
-          它自稱的「科學」或「能量藍圖」屬體系主張，本站不把它改寫成已獲獨立科學驗證的結論。
+          Jovian Archive 是「人類圖體系如何定義自身」的原始來源，例如人格取出生時刻、設計取太陽回推約 88° 的時刻。它自稱的「科學」或「能量藍圖」屬體系主張，本站不把它改寫成已獲獨立科學驗證的結論。
         </p>
       </section>
 
@@ -212,9 +211,7 @@ export function VerificationPage() {
       <section className="section" aria-labelledby="ref-h">
         <h2 id="ref-h">第三方轉錄參照圖：{totalMatch}/130 個啟動點一致</h2>
         <p>
-          資料取自 <a href={REFERENCE_SOURCE.url} target="_blank" rel="noopener noreferrer">{REFERENCE_SOURCE.label}</a>（{REFERENCE_SOURCE.license}）。
-          轉錄者表示數值抄錄自「某個以 Swiss Ephemeris 為基礎的線上排圖器」的截圖，但沒有公開排圖器名稱，本站也無法取得原始截圖。
-          因此這是二手參照：它能抓出明顯錯誤，但不等同於直接與其他軟體比對。以下結果在你的瀏覽器中即時計算。
+          資料取自 <a href={REFERENCE_SOURCE.url} target="_blank" rel="noopener noreferrer">{REFERENCE_SOURCE.label}</a>（{REFERENCE_SOURCE.license}）。轉錄者表示數值抄錄自「某個以 Swiss Ephemeris 為基礎的線上排圖器」的截圖，但沒有公開排圖器名稱，本站也無法取得原始截圖。因此這是二手參照：它能抓出明顯錯誤，但不等同於直接與其他軟體比對。以下結果在你的瀏覽器中即時計算。
         </p>
         <div className="table-wrap">
           <table className="compare">
@@ -254,8 +251,7 @@ export function VerificationPage() {
       <section className="section" aria-labelledby="cases-h">
         <h2 id="cases-h">30 組合成測例：{passCount}/30 符合預期</h2>
         <p>
-          「預期」只採用不靠本站引擎就能得知的事實（例如香港 1980 年後不實施夏令時間），或依本站規則表推導的結果，各列標示依據。
-          本站引擎的完整輸出另存為內部快照，只用於回歸比對；所有測例的跨軟體結果都還是空白。
+          「預期」只採用不靠本站引擎就能得知的事實（例如香港 1980 年後不實施夏令時間），或依本站規則表推導的結果，各列標示依據。本站引擎的完整輸出另存為內部快照，只用於回歸比對；所有測例的跨軟體結果都還是空白。
         </p>
         <p>
           <button type="button" className="btn btn-quiet" onClick={copyCases}>
@@ -410,17 +406,14 @@ export function VerificationPage() {
           </table>
         </div>
         <p className="muted">
-          未完成的原因：這些排圖器需要在網頁上手動輸入，建置環境無法操作；本站也沒有確認它們的使用條款是否允許自動擷取。
-          若你能在這些排圖器輸入上方 30 組測例並提供結果，就能補上這一欄。
+          未完成的原因：這些排圖器需要在網頁上手動輸入，建置環境無法操作；本站也沒有確認它們的使用條款是否允許自動擷取。若你能在這些排圖器輸入上方 30 組測例並提供結果，就能補上這一欄。
         </p>
       </section>
 
       <section className="section" aria-labelledby="lic-h">
         <h2 id="lic-h">星曆授權</h2>
         <p>
-          Swiss Ephemeris 採雙重授權（AGPL 或付費的 Professional License），開發者必須在散布軟體或啟用公開服務之前選定其一。
-          本站沒有更換引擎，沿用既有的 Astronomy Engine（MIT）；MIT 授權要求在散布的軟體中保留版權與授權聲明，全文列在
-          <a href="#/sources">來源頁</a>的「第三方元件授權」。程式能在瀏覽器執行，不代表沒有授權問題；本站的判斷依據是各套件實際的授權條款。
+          Swiss Ephemeris 採雙重授權（AGPL 或付費的 Professional License），開發者必須在散布軟體或啟用公開服務之前選定其一。本站沒有更換引擎，沿用既有的 Astronomy Engine（MIT）；MIT 授權要求在散布的軟體中保留版權與授權聲明，全文列在<a href="#/sources">來源頁</a>的「第三方元件授權」。程式能在瀏覽器執行，不代表沒有授權問題；本站的判斷依據是各套件實際的授權條款。
         </p>
       </section>
     </div>
