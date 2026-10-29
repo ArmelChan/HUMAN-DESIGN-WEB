@@ -1,0 +1,1656 @@
+{
+ "hk-1985": {
+  "conversion": "ok",
+  "variants": [
+   {
+    "utc": "1985-07-15T02:30:00.000Z",
+    "offsetMinutes": 480,
+    "designUtc": "1985-04-14T13:51:52.716Z",
+    "solverResidualDeg": -7.47e-9,
+    "type": "generator",
+    "authority": "emotional",
+    "profile": "2/5",
+    "definition": "tripleSplit",
+    "definedCenters": [
+     "ajna",
+     "throat",
+     "g",
+     "solarPlexus",
+     "sacral",
+     "root"
+    ],
+    "personality": [
+     "62.2",
+     "61.2",
+     "2.4",
+     "1.4",
+     "45.2",
+     "4.1",
+     "16.5",
+     "62.3",
+     "13.2",
+     "43.3",
+     "5.4",
+     "10.4",
+     "50.6"
+    ],
+    "design": [
+     "42.5",
+     "32.5",
+     "2.6",
+     "1.6",
+     "49.4",
+     "17.4",
+     "17.5",
+     "23.4",
+     "19.6",
+     "14.3",
+     "26.1",
+     "10.6",
+     "28.2"
+    ],
+    "nearLineBoundary": [
+     "P.northNode",
+     "P.southNode",
+     "P.venus",
+     "D.mars"
+    ]
+   }
+  ]
+ },
+ "hk-1962-summer": {
+  "conversion": "ok",
+  "variants": [
+   {
+    "utc": "1962-08-10T00:00:00.000Z",
+    "offsetMinutes": 540,
+    "designUtc": "1962-05-10T00:45:52.897Z",
+    "solverResidualDeg": 7.4e-9,
+    "type": "manifestingGenerator",
+    "authority": "emotional",
+    "profile": "4/1",
+    "definition": "split",
+    "definedCenters": [
+     "ajna",
+     "throat",
+     "g",
+     "heart",
+     "solarPlexus",
+     "sacral"
+    ],
+    "personality": [
+     "7.4",
+     "13.4",
+     "33.2",
+     "19.2",
+     "34.3",
+     "29.5",
+     "46.4",
+     "45.6",
+     "37.5",
+     "41.6",
+     "29.6",
+     "44.4",
+     "40.4"
+    ],
+    "design": [
+     "23.1",
+     "43.1",
+     "33.6",
+     "19.6",
+     "31.1",
+     "16.5",
+     "35.3",
+     "51.1",
+     "37.3",
+     "19.4",
+     "29.3",
+     "44.5",
+     "40.2"
+    ],
+    "nearLineBoundary": [
+     "P.jupiter",
+     "D.sun",
+     "D.earth",
+     "D.venus",
+     "D.uranus"
+    ]
+   }
+  ]
+ },
+ "hk-1996-leap": {
+  "conversion": "ok",
+  "variants": [
+   {
+    "utc": "1996-02-28T22:00:00.000Z",
+    "offsetMinutes": 480,
+    "designUtc": "1995-12-04T06:03:20.549Z",
+    "solverResidualDeg": 9.36e-10,
+    "type": "manifestingGenerator",
+    "authority": "emotional",
+    "profile": "5/1",
+    "definition": "tripleSplit",
+    "definedCenters": [
+     "head",
+     "ajna",
+     "throat",
+     "g",
+     "heart",
+     "spleen",
+     "solarPlexus",
+     "sacral"
+    ],
+    "personality": [
+     "37.5",
+     "40.5",
+     "57.3",
+     "51.3",
+     "52.6",
+     "13.6",
+     "42.3",
+     "37.6",
+     "38.3",
+     "36.3",
+     "41.1",
+     "60.1",
+     "34.4"
+    ],
+    "design": [
+     "5.1",
+     "35.1",
+     "32.6",
+     "42.6",
+     "24.4",
+     "26.1",
+     "58.5",
+     "10.5",
+     "11.1",
+     "22.2",
+     "60.2",
+     "61.4",
+     "34.1"
+    ],
+    "nearLineBoundary": [
+     "P.northNode",
+     "P.southNode",
+     "D.moon"
+    ]
+   }
+  ]
+ },
+ "van-2021-gap": {
+  "conversion": "nonexistent"
+ },
+ "van-2021-before-gap": {
+  "conversion": "ok",
+  "variants": [
+   {
+    "utc": "2021-03-14T09:59:00.000Z",
+    "offsetMinutes": -480,
+    "designUtc": "2020-12-17T12:45:29.525Z",
+    "solverResidualDeg": -5.28e-10,
+    "type": "manifestor",
+    "authority": "emotional",
+    "profile": "2/4",
+    "definition": "split",
+    "definedCenters": [
+     "head",
+     "ajna",
+     "throat",
+     "solarPlexus",
+     "root"
+    ],
+    "personality": [
+     "36.2",
+     "6.2",
+     "35.4",
+     "5.4",
+     "17.2",
+     "30.4",
+     "22.5",
+     "16.1",
+     "49.1",
+     "19.3",
+     "24.1",
+     "22.5",
+     "61.6"
+    ],
+    "design": [
+     "11.4",
+     "12.4",
+     "45.4",
+     "26.4",
+     "41.2",
+     "11.3",
+     "34.3",
+     "42.1",
+     "60.4",
+     "60.4",
+     "27.6",
+     "22.2",
+     "61.4"
+    ],
+    "nearLineBoundary": [
+     "P.northNode",
+     "P.southNode",
+     "P.neptune",
+     "P.pluto",
+     "D.mars"
+    ]
+   }
+  ]
+ },
+ "van-2021-after-gap": {
+  "conversion": "ok",
+  "variants": [
+   {
+    "utc": "2021-03-14T10:00:00.000Z",
+    "offsetMinutes": -420,
+    "designUtc": "2020-12-17T12:46:28.296Z",
+    "solverResidualDeg": 6.68e-9,
+    "type": "manifestor",
+    "authority": "emotional",
+    "profile": "2/4",
+    "definition": "split",
+    "definedCenters": [
+     "head",
+     "ajna",
+     "throat",
+     "solarPlexus",
+     "root"
+    ],
+    "personality": [
+     "36.2",
+     "6.2",
+     "35.4",
+     "5.4",
+     "17.2",
+     "30.4",
+     "22.5",
+     "16.1",
+     "49.1",
+     "19.3",
+     "24.1",
+     "22.5",
+     "61.6"
+    ],
+    "design": [
+     "11.4",
+     "12.4",
+     "45.4",
+     "26.4",
+     "41.2",
+     "11.3",
+     "34.3",
+     "42.1",
+     "60.4",
+     "60.4",
+     "27.6",
+     "22.2",
+     "61.4"
+    ],
+    "nearLineBoundary": [
+     "P.northNode",
+     "P.southNode",
+     "P.neptune",
+     "P.pluto",
+     "D.mars"
+    ]
+   }
+  ]
+ },
+ "van-2021-overlap": {
+  "conversion": "ambiguous",
+  "variants": [
+   {
+    "utc": "2021-11-07T08:30:00.000Z",
+    "offsetMinutes": -420,
+    "designUtc": "2021-08-09T12:38:03.876Z",
+    "solverResidualDeg": -2.77e-9,
+    "type": "manifestingGenerator",
+    "authority": "emotional",
+    "profile": "3/5",
+    "definition": "tripleSplit",
+    "definedCenters": [
+     "head",
+     "ajna",
+     "throat",
+     "g",
+     "solarPlexus",
+     "sacral",
+     "root"
+    ],
+    "personality": [
+     "1.3",
+     "2.3",
+     "20.2",
+     "34.2",
+     "26.3",
+     "28.1",
+     "10.4",
+     "28.4",
+     "49.5",
+     "41.6",
+     "24.6",
+     "22.4",
+     "61.5"
+    ],
+    "design": [
+     "7.5",
+     "13.5",
+     "16.3",
+     "9.3",
+     "29.5",
+     "29.2",
+     "47.6",
+     "40.2",
+     "30.5",
+     "19.3",
+     "2.2",
+     "36.1",
+     "61.5"
+    ],
+    "nearLineBoundary": [
+     "P.sun",
+     "P.earth",
+     "P.moon",
+     "D.mercury",
+     "D.mars"
+    ]
+   },
+   {
+    "utc": "2021-11-07T09:30:00.000Z",
+    "offsetMinutes": -480,
+    "designUtc": "2021-08-09T13:40:51.165Z",
+    "solverResidualDeg": -3.28e-9,
+    "type": "manifestingGenerator",
+    "authority": "emotional",
+    "profile": "3/5",
+    "definition": "tripleSplit",
+    "definedCenters": [
+     "head",
+     "ajna",
+     "throat",
+     "g",
+     "solarPlexus",
+     "sacral",
+     "root"
+    ],
+    "personality": [
+     "1.3",
+     "2.3",
+     "20.2",
+     "34.2",
+     "26.4",
+     "28.1",
+     "10.4",
+     "28.4",
+     "49.5",
+     "41.6",
+     "24.6",
+     "22.4",
+     "61.5"
+    ],
+    "design": [
+     "7.5",
+     "13.5",
+     "16.3",
+     "9.3",
+     "29.6",
+     "29.2",
+     "47.6",
+     "40.2",
+     "30.5",
+     "19.3",
+     "2.2",
+     "36.1",
+     "61.5"
+    ],
+    "nearLineBoundary": []
+   }
+  ]
+ },
+ "van-1965-summer": {
+  "conversion": "ok",
+  "variants": [
+   {
+    "utc": "1965-07-01T19:00:00.000Z",
+    "offsetMinutes": -420,
+    "designUtc": "1965-04-01T15:48:59.722Z",
+    "solverResidualDeg": -4.82e-10,
+    "type": "projector",
+    "authority": "selfProjected",
+    "profile": "1/3",
+    "definition": "single",
+    "definedCenters": [
+     "throat",
+     "g"
+    ],
+    "personality": [
+     "39.1",
+     "38.1",
+     "35.3",
+     "5.3",
+     "7.4",
+     "56.5",
+     "56.6",
+     "46.4",
+     "35.6",
+     "22.1",
+     "64.1",
+     "1.5",
+     "64.3"
+    ],
+    "design": [
+     "21.3",
+     "48.3",
+     "35.5",
+     "5.5",
+     "17.4",
+     "42.3",
+     "17.6",
+     "40.6",
+     "8.2",
+     "63.1",
+     "64.1",
+     "43.1",
+     "64.4"
+    ],
+    "nearLineBoundary": [
+     "P.venus"
+    ]
+   }
+  ]
+ },
+ "tpe-1979-dst": {
+  "conversion": "ok",
+  "variants": [
+   {
+    "utc": "1979-07-15T03:00:00.000Z",
+    "offsetMinutes": 540,
+    "designUtc": "1979-04-14T14:37:19.407Z",
+    "solverResidualDeg": -7.79e-10,
+    "type": "manifestor",
+    "authority": "emotional",
+    "profile": "2/4",
+    "definition": "single",
+    "definedCenters": [
+     "ajna",
+     "throat",
+     "heart",
+     "solarPlexus"
+    ],
+    "personality": [
+     "62.2",
+     "61.2",
+     "40.5",
+     "37.5",
+     "17.1",
+     "7.1",
+     "39.2",
+     "35.3",
+     "7.1",
+     "40.6",
+     "1.4",
+     "26.2",
+     "57.2"
+    ],
+    "design": [
+     "42.4",
+     "32.4",
+     "64.6",
+     "63.6",
+     "1.6",
+     "36.6",
+     "22.3",
+     "17.3",
+     "56.4",
+     "40.2",
+     "43.2",
+     "26.4",
+     "57.3"
+    ],
+    "nearLineBoundary": [
+     "P.northNode",
+     "P.southNode",
+     "P.mercury",
+     "P.uranus",
+     "D.northNode",
+     "D.southNode",
+     "D.saturn"
+    ]
+   }
+  ]
+ },
+ "invalid-2001-02-29": {
+  "conversion": "invalid"
+ },
+ "utc-2000-leap": {
+  "conversion": "ok",
+  "variants": [
+   {
+    "utc": "2000-02-29T12:00:00.000Z",
+    "offsetMinutes": 0,
+    "designUtc": "1999-12-04T19:45:23.573Z",
+    "solverResidualDeg": 5.51e-10,
+    "type": "generator",
+    "authority": "emotional",
+    "profile": "5/1",
+    "definition": "split",
+    "definedCenters": [
+     "heart",
+     "spleen",
+     "solarPlexus",
+     "sacral"
+    ],
+    "personality": [
+     "37.5",
+     "40.5",
+     "31.2",
+     "41.2",
+     "58.2",
+     "63.2",
+     "13.1",
+     "21.4",
+     "27.1",
+     "24.6",
+     "13.6",
+     "41.4",
+     "5.2"
+    ],
+    "design": [
+     "5.1",
+     "35.1",
+     "31.4",
+     "41.4",
+     "44.1",
+     "43.4",
+     "50.3",
+     "41.5",
+     "42.6",
+     "24.5",
+     "13.1",
+     "41.1",
+     "9.5"
+    ],
+    "nearLineBoundary": [
+     "P.mars",
+     "D.jupiter",
+     "D.pluto"
+    ]
+   }
+  ]
+ },
+ "utc-1999-1231": {
+  "conversion": "ok",
+  "variants": [
+   {
+    "utc": "1999-12-31T23:59:00.000Z",
+    "offsetMinutes": 0,
+    "designUtc": "1999-10-05T13:23:08.241Z",
+    "solverResidualDeg": 5.16e-9,
+    "type": "manifestingGenerator",
+    "authority": "emotional",
+    "profile": "1/3",
+    "definition": "single",
+    "definedCenters": [
+     "throat",
+     "g",
+     "spleen",
+     "solarPlexus",
+     "sacral",
+     "root"
+    ],
+    "personality": [
+     "38.1",
+     "39.1",
+     "31.3",
+     "41.3",
+     "28.6",
+     "10.4",
+     "34.1",
+     "30.4",
+     "42.5",
+     "24.3",
+     "13.2",
+     "41.2",
+     "5.1"
+    ],
+    "design": [
+     "48.3",
+     "21.3",
+     "33.4",
+     "19.4",
+     "29.1",
+     "50.5",
+     "29.5",
+     "26.6",
+     "27.1",
+     "2.3",
+     "19.6",
+     "60.6",
+     "9.3"
+    ],
+    "nearLineBoundary": [
+     "P.mercury",
+     "P.saturn",
+     "D.saturn"
+    ]
+   }
+  ]
+ },
+ "utc-1900-lower": {
+  "conversion": "ok",
+  "variants": [
+   {
+    "utc": "1900-01-01T00:00:00.000Z",
+    "offsetMinutes": 0,
+    "designUtc": "1899-10-05T15:09:35.798Z",
+    "solverResidualDeg": -1.07e-9,
+    "type": "manifestingGenerator",
+    "authority": "sacral",
+    "profile": "1/3",
+    "definition": "single",
+    "definedCenters": [
+     "throat",
+     "g",
+     "heart",
+     "spleen",
+     "sacral"
+    ],
+    "personality": [
+     "38.1",
+     "39.1",
+     "26.4",
+     "45.4",
+     "10.5",
+     "26.3",
+     "41.5",
+     "38.5",
+     "34.2",
+     "11.6",
+     "9.5",
+     "12.3",
+     "35.5"
+    ],
+    "design": [
+     "48.3",
+     "21.3",
+     "11.1",
+     "12.1",
+     "32.1",
+     "57.1",
+     "57.3",
+     "44.3",
+     "44.6",
+     "26.2",
+     "34.6",
+     "12.5",
+     "35.6"
+    ],
+    "nearLineBoundary": [
+     "D.moon"
+    ]
+   }
+  ]
+ },
+ "utc-2100-upper": {
+  "conversion": "ok",
+  "variants": [
+   {
+    "utc": "2100-12-31T23:59:00.000Z",
+    "offsetMinutes": 0,
+    "designUtc": "2100-10-05T12:21:19.233Z",
+    "solverResidualDeg": 1.49e-9,
+    "type": "generator",
+    "authority": "emotional",
+    "profile": "1/4",
+    "definition": "split",
+    "definedCenters": [
+     "heart",
+     "spleen",
+     "solarPlexus",
+     "sacral",
+     "root"
+    ],
+    "personality": [
+     "38.1",
+     "39.1",
+     "30.6",
+     "29.6",
+     "61.4",
+     "60.3",
+     "11.4",
+     "5.3",
+     "1.5",
+     "28.6",
+     "42.2",
+     "47.3",
+     "27.2"
+    ],
+    "design": [
+     "48.4",
+     "21.4",
+     "37.3",
+     "40.3",
+     "28.6",
+     "57.6",
+     "40.2",
+     "48.6",
+     "50.3",
+     "50.2",
+     "42.4",
+     "47.2",
+     "27.3"
+    ],
+    "nearLineBoundary": [
+     "P.mercury",
+     "P.jupiter",
+     "P.uranus"
+    ]
+   }
+  ]
+ },
+ "sun-gate-edge-before": {
+  "conversion": "ok",
+  "variants": [
+   {
+    "utc": "2001-01-21T23:26:00.000Z",
+    "offsetMinutes": 0,
+    "designUtc": "2000-10-27T03:04:13.108Z",
+    "solverResidualDeg": -9.13e-9,
+    "type": "generator",
+    "authority": "sacral",
+    "profile": "6/3",
+    "definition": "split",
+    "definedCenters": [
+     "throat",
+     "g",
+     "spleen",
+     "sacral"
+    ],
+    "personality": [
+     "60.6",
+     "56.6",
+     "53.1",
+     "54.1",
+     "58.1",
+     "13.6",
+     "22.3",
+     "1.4",
+     "20.2",
+     "23.6",
+     "49.1",
+     "41.5",
+     "5.4"
+    ],
+    "design": [
+     "28.3",
+     "27.3",
+     "53.4",
+     "54.4",
+     "50.6",
+     "44.4",
+     "9.5",
+     "6.3",
+     "16.5",
+     "8.6",
+     "13.4",
+     "41.2",
+     "9.6"
+    ],
+    "nearLineBoundary": [
+     "P.sun",
+     "P.earth",
+     "P.mars",
+     "D.venus",
+     "D.neptune",
+     "D.pluto"
+    ]
+   }
+  ]
+ },
+ "sun-gate-edge-after": {
+  "conversion": "ok",
+  "variants": [
+   {
+    "utc": "2001-01-21T23:27:00.000Z",
+    "offsetMinutes": 0,
+    "designUtc": "2000-10-27T03:05:14.280Z",
+    "solverResidualDeg": 2.18e-9,
+    "type": "generator",
+    "authority": "sacral",
+    "profile": "1/3",
+    "definition": "split",
+    "definedCenters": [
+     "throat",
+     "g",
+     "spleen",
+     "sacral"
+    ],
+    "personality": [
+     "41.1",
+     "31.1",
+     "53.1",
+     "54.1",
+     "58.1",
+     "13.6",
+     "22.3",
+     "1.4",
+     "20.2",
+     "23.6",
+     "49.1",
+     "41.5",
+     "5.4"
+    ],
+    "design": [
+     "28.3",
+     "27.3",
+     "53.4",
+     "54.4",
+     "50.6",
+     "44.4",
+     "9.5",
+     "6.3",
+     "16.5",
+     "8.6",
+     "13.4",
+     "41.2",
+     "9.6"
+    ],
+    "nearLineBoundary": [
+     "P.sun",
+     "P.earth",
+     "P.mars",
+     "D.venus",
+     "D.neptune",
+     "D.pluto"
+    ]
+   }
+  ]
+ },
+ "sun-line-edge": {
+  "conversion": "ok",
+  "variants": [
+   {
+    "utc": "2001-01-24T17:46:00.000Z",
+    "offsetMinutes": 0,
+    "designUtc": "2000-10-29T22:37:45.790Z",
+    "solverResidualDeg": -2.44e-9,
+    "type": "projector",
+    "authority": "selfProjected",
+    "profile": "3/6",
+    "definition": "single",
+    "definedCenters": [
+     "throat",
+     "g"
+    ],
+    "personality": [
+     "41.3",
+     "31.3",
+     "53.1",
+     "54.1",
+     "41.6",
+     "49.4",
+     "22.6",
+     "1.6",
+     "20.2",
+     "23.6",
+     "49.2",
+     "41.5",
+     "5.4"
+    ],
+    "design": [
+     "28.6",
+     "27.6",
+     "53.4",
+     "54.4",
+     "9.3",
+     "28.6",
+     "5.2",
+     "6.5",
+     "16.5",
+     "8.5",
+     "13.4",
+     "41.2",
+     "5.1"
+    ],
+    "nearLineBoundary": [
+     "P.sun",
+     "P.earth",
+     "P.venus",
+     "D.neptune",
+     "D.pluto"
+    ]
+   }
+  ]
+ },
+ "sun-color-edge": {
+  "conversion": "ok",
+  "variants": [
+   {
+    "utc": "2001-01-22T06:48:00.000Z",
+    "offsetMinutes": 0,
+    "designUtc": "2000-10-27T10:34:47.682Z",
+    "solverResidualDeg": -3.73e-10,
+    "type": "projector",
+    "authority": "selfProjected",
+    "profile": "1/3",
+    "definition": "single",
+    "definedCenters": [
+     "throat",
+     "g"
+    ],
+    "personality": [
+     "41.1",
+     "31.1",
+     "53.1",
+     "54.1",
+     "58.5",
+     "49.1",
+     "22.3",
+     "1.5",
+     "20.2",
+     "23.6",
+     "49.1",
+     "41.5",
+     "5.4"
+    ],
+    "design": [
+     "28.3",
+     "27.3",
+     "53.4",
+     "54.4",
+     "28.4",
+     "44.3",
+     "9.5",
+     "6.3",
+     "16.5",
+     "8.6",
+     "13.4",
+     "41.2",
+     "9.6"
+    ],
+    "nearLineBoundary": [
+     "P.uranus",
+     "D.neptune",
+     "D.pluto"
+    ]
+   }
+  ]
+ },
+ "moon-line-edge-hk": {
+  "conversion": "ok",
+  "variants": [
+   {
+    "utc": "1985-05-10T01:10:00.000Z",
+    "offsetMinutes": 480,
+    "designUtc": "1985-02-10T03:13:00.653Z",
+    "solverResidualDeg": 8.93e-9,
+    "type": "generator",
+    "authority": "sacral",
+    "profile": "1/3",
+    "definition": "split",
+    "definedCenters": [
+     "ajna",
+     "throat",
+     "g",
+     "sacral"
+    ],
+    "personality": [
+     "23.1",
+     "43.1",
+     "2.6",
+     "1.6",
+     "60.4",
+     "42.4",
+     "21.1",
+     "16.4",
+     "13.3",
+     "14.1",
+     "26.1",
+     "10.6",
+     "28.1"
+    ],
+    "design": [
+     "49.3",
+     "4.3",
+     "23.5",
+     "43.5",
+     "32.2",
+     "13.2",
+     "17.4",
+     "17.2",
+     "60.5",
+     "14.4",
+     "26.1",
+     "10.5",
+     "28.3"
+    ],
+    "nearLineBoundary": [
+     "P.moon",
+     "P.pluto"
+    ]
+   }
+  ]
+ },
+ "start-divergence": {
+  "conversion": "ok",
+  "variants": [
+   {
+    "utc": "2001-01-22T00:08:00.000Z",
+    "offsetMinutes": 0,
+    "designUtc": "2000-10-27T03:47:02.265Z",
+    "solverResidualDeg": -4.45e-10,
+    "type": "generator",
+    "authority": "sacral",
+    "profile": "1/3",
+    "definition": "split",
+    "definedCenters": [
+     "throat",
+     "g",
+     "spleen",
+     "sacral"
+    ],
+    "personality": [
+     "41.1",
+     "31.1",
+     "53.1",
+     "54.1",
+     "58.1",
+     "13.6",
+     "22.3",
+     "1.5",
+     "20.2",
+     "23.6",
+     "49.1",
+     "41.5",
+     "5.4"
+    ],
+    "design": [
+     "28.3",
+     "27.3",
+     "53.4",
+     "54.4",
+     "50.6",
+     "44.4",
+     "9.5",
+     "6.3",
+     "16.5",
+     "8.6",
+     "13.4",
+     "41.2",
+     "9.6"
+    ],
+    "nearLineBoundary": [
+     "P.sun",
+     "P.earth",
+     "P.mars",
+     "D.neptune",
+     "D.pluto"
+    ]
+   }
+  ]
+ },
+ "projector-splenic": {
+  "conversion": "ok",
+  "variants": [
+   {
+    "utc": "1950-01-01T00:00:00.000Z",
+    "offsetMinutes": 0,
+    "designUtc": "1949-10-05T14:18:23.707Z",
+    "solverResidualDeg": -4.01e-9,
+    "type": "projector",
+    "authority": "splenic",
+    "profile": "1/3",
+    "definition": "split",
+    "definedCenters": [
+     "head",
+     "ajna",
+     "throat",
+     "spleen"
+    ],
+    "personality": [
+     "38.1",
+     "39.1",
+     "21.4",
+     "48.4",
+     "20.2",
+     "60.4",
+     "13.4",
+     "46.5",
+     "41.5",
+     "47.3",
+     "15.5",
+     "57.3",
+     "7.5"
+    ],
+    "design": [
+     "48.3",
+     "21.3",
+     "51.2",
+     "57.2",
+     "36.4",
+     "18.5",
+     "43.6",
+     "7.5",
+     "61.3",
+     "64.3",
+     "52.2",
+     "48.6",
+     "7.5"
+    ],
+    "nearLineBoundary": [
+     "P.venus",
+     "D.moon"
+    ]
+   }
+  ]
+ },
+ "triple-split": {
+  "conversion": "ok",
+  "variants": [
+   {
+    "utc": "1950-01-01T07:24:00.000Z",
+    "offsetMinutes": 0,
+    "designUtc": "1949-10-05T21:57:24.554Z",
+    "solverResidualDeg": 3.65e-9,
+    "type": "projector",
+    "authority": "splenic",
+    "profile": "1/4",
+    "definition": "tripleSplit",
+    "definedCenters": [
+     "head",
+     "ajna",
+     "throat",
+     "g",
+     "heart",
+     "spleen"
+    ],
+    "personality": [
+     "38.1",
+     "39.1",
+     "21.4",
+     "48.4",
+     "20.6",
+     "60.4",
+     "13.5",
+     "46.5",
+     "41.5",
+     "47.3",
+     "15.5",
+     "57.3",
+     "7.5"
+    ],
+    "design": [
+     "48.4",
+     "21.4",
+     "51.2",
+     "57.2",
+     "25.2",
+     "18.5",
+     "14.1",
+     "7.5",
+     "61.3",
+     "64.3",
+     "52.2",
+     "48.6",
+     "7.5"
+    ],
+    "nearLineBoundary": [
+     "D.sun",
+     "D.earth"
+    ]
+   }
+  ]
+ },
+ "mental-single": {
+  "conversion": "ok",
+  "variants": [
+   {
+    "utc": "1950-01-01T22:12:00.000Z",
+    "offsetMinutes": 0,
+    "designUtc": "1949-10-06T13:15:11.319Z",
+    "solverResidualDeg": 8.19e-10,
+    "type": "projector",
+    "authority": "mental",
+    "profile": "2/4",
+    "definition": "single",
+    "definedCenters": [
+     "head",
+     "ajna"
+    ],
+    "personality": [
+     "38.2",
+     "39.2",
+     "21.4",
+     "48.4",
+     "35.2",
+     "60.5",
+     "13.5",
+     "46.5",
+     "41.6",
+     "47.3",
+     "15.5",
+     "57.3",
+     "7.5"
+    ],
+    "design": [
+     "48.4",
+     "21.4",
+     "51.2",
+     "57.2",
+     "17.4",
+     "18.4",
+     "14.2",
+     "7.6",
+     "61.3",
+     "64.3",
+     "52.2",
+     "48.6",
+     "7.5"
+    ],
+    "nearLineBoundary": [
+     "P.jupiter"
+    ]
+   }
+  ]
+ },
+ "manifestor-ego": {
+  "conversion": "ok",
+  "variants": [
+   {
+    "utc": "1950-01-02T09:18:00.000Z",
+    "offsetMinutes": 0,
+    "designUtc": "1949-10-07T00:43:18.078Z",
+    "solverResidualDeg": 8.18e-9,
+    "type": "manifestor",
+    "authority": "egoManifested",
+    "profile": "3/5",
+    "definition": "split",
+    "definedCenters": [
+     "head",
+     "ajna",
+     "throat",
+     "heart"
+    ],
+    "personality": [
+     "38.3",
+     "39.3",
+     "21.4",
+     "48.4",
+     "45.2",
+     "60.5",
+     "13.5",
+     "46.5",
+     "41.6",
+     "47.3",
+     "15.5",
+     "57.3",
+     "7.5"
+    ],
+    "design": [
+     "48.5",
+     "21.5",
+     "51.2",
+     "57.2",
+     "21.4",
+     "18.4",
+     "14.2",
+     "7.6",
+     "61.3",
+     "64.3",
+     "52.2",
+     "48.6",
+     "7.5"
+    ],
+    "nearLineBoundary": [
+     "P.sun",
+     "P.earth",
+     "P.northNode",
+     "P.southNode"
+    ]
+   }
+  ]
+ },
+ "generator-sacral": {
+  "conversion": "ok",
+  "variants": [
+   {
+    "utc": "1950-01-03T14:54:00.000Z",
+    "offsetMinutes": 0,
+    "designUtc": "1949-10-08T07:17:18.564Z",
+    "solverResidualDeg": 3.11e-9,
+    "type": "generator",
+    "authority": "sacral",
+    "profile": "4/6",
+    "definition": "split",
+    "definedCenters": [
+     "head",
+     "ajna",
+     "sacral",
+     "root"
+    ],
+    "personality": [
+     "38.4",
+     "39.4",
+     "21.3",
+     "48.3",
+     "52.1",
+     "60.6",
+     "13.5",
+     "46.6",
+     "41.6",
+     "47.3",
+     "15.5",
+     "57.3",
+     "7.5"
+    ],
+    "design": [
+     "48.6",
+     "21.6",
+     "51.2",
+     "57.2",
+     "3.2",
+     "18.3",
+     "14.4",
+     "4.1",
+     "61.3",
+     "64.3",
+     "52.2",
+     "48.6",
+     "7.5"
+    ],
+    "nearLineBoundary": [
+     "D.mercury"
+    ]
+   }
+  ]
+ },
+ "self-projected": {
+  "conversion": "ok",
+  "variants": [
+   {
+    "utc": "1950-01-05T18:42:00.000Z",
+    "offsetMinutes": 0,
+    "designUtc": "1949-10-10T12:43:19.448Z",
+    "solverResidualDeg": -1.22e-10,
+    "type": "projector",
+    "authority": "selfProjected",
+    "profile": "6/2",
+    "definition": "split",
+    "definedCenters": [
+     "head",
+     "ajna",
+     "throat",
+     "g"
+    ],
+    "personality": [
+     "38.6",
+     "39.6",
+     "21.3",
+     "48.3",
+     "31.1",
+     "41.2",
+     "13.6",
+     "18.1",
+     "41.6",
+     "47.3",
+     "15.5",
+     "57.3",
+     "7.5"
+    ],
+    "design": [
+     "57.2",
+     "51.2",
+     "51.2",
+     "57.2",
+     "23.6",
+     "18.1",
+     "14.6",
+     "4.2",
+     "61.3",
+     "64.4",
+     "52.2",
+     "48.6",
+     "7.5"
+    ],
+    "nearLineBoundary": [
+     "P.mars",
+     "P.jupiter",
+     "D.venus",
+     "D.saturn"
+    ]
+   }
+  ]
+ },
+ "manifesting-generator": {
+  "conversion": "ok",
+  "variants": [
+   {
+    "utc": "1950-01-06T09:30:00.000Z",
+    "offsetMinutes": 0,
+    "designUtc": "1949-10-11T03:58:29.143Z",
+    "solverResidualDeg": 7.64e-9,
+    "type": "manifestingGenerator",
+    "authority": "sacral",
+    "profile": "1/3",
+    "definition": "split",
+    "definedCenters": [
+     "head",
+     "ajna",
+     "throat",
+     "g",
+     "spleen",
+     "sacral"
+    ],
+    "personality": [
+     "54.1",
+     "53.1",
+     "21.3",
+     "48.3",
+     "33.4",
+     "41.2",
+     "13.6",
+     "18.1",
+     "19.1",
+     "47.3",
+     "15.5",
+     "57.3",
+     "7.5"
+    ],
+    "design": [
+     "57.3",
+     "51.3",
+     "51.2",
+     "57.2",
+     "20.2",
+     "18.1",
+     "34.1",
+     "4.3",
+     "61.3",
+     "64.4",
+     "52.2",
+     "48.6",
+     "7.5"
+    ],
+    "nearLineBoundary": [
+     "D.mars"
+    ]
+   }
+  ]
+ },
+ "ego-projected": {
+  "conversion": "ok",
+  "variants": [
+   {
+    "utc": "1950-01-28T03:12:00.000Z",
+    "offsetMinutes": 0,
+    "designUtc": "1949-11-02T09:34:41.186Z",
+    "solverResidualDeg": -6.38e-9,
+    "type": "projector",
+    "authority": "egoProjected",
+    "profile": "1/3",
+    "definition": "split",
+    "definedCenters": [
+     "head",
+     "ajna",
+     "g",
+     "heart"
+    ],
+    "personality": [
+     "19.1",
+     "33.1",
+     "21.1",
+     "48.1",
+     "8.5",
+     "54.4",
+     "19.6",
+     "48.1",
+     "19.6",
+     "47.2",
+     "15.4",
+     "57.3",
+     "7.5"
+    ],
+    "design": [
+     "44.3",
+     "24.3",
+     "51.2",
+     "57.2",
+     "25.4",
+     "50.2",
+     "11.4",
+     "59.4",
+     "61.5",
+     "64.6",
+     "52.1",
+     "57.1",
+     "7.6"
+    ],
+    "nearLineBoundary": [
+     "P.sun",
+     "P.earth",
+     "D.moon",
+     "D.jupiter",
+     "D.uranus"
+    ]
+   }
+  ]
+ },
+ "quadruple-split": {
+  "conversion": "ok",
+  "variants": [
+   {
+    "utc": "1950-02-24T01:12:00.000Z",
+    "offsetMinutes": 0,
+    "designUtc": "1949-11-29T10:03:57.038Z",
+    "solverResidualDeg": -3.31e-9,
+    "type": "generator",
+    "authority": "emotional",
+    "profile": "6/2",
+    "definition": "quadrupleSplit",
+    "definedCenters": [
+     "head",
+     "ajna",
+     "throat",
+     "g",
+     "heart",
+     "spleen",
+     "solarPlexus",
+     "sacral",
+     "root"
+    ],
+    "personality": [
+     "55.6",
+     "59.6",
+     "17.5",
+     "18.5",
+     "23.6",
+     "19.5",
+     "41.2",
+     "48.1",
+     "49.1",
+     "64.6",
+     "15.3",
+     "57.3",
+     "7.4"
+    ],
+    "design": [
+     "9.2",
+     "16.2",
+     "51.1",
+     "57.1",
+     "25.1",
+     "9.6",
+     "61.4",
+     "47.1",
+     "60.4",
+     "47.2",
+     "52.1",
+     "57.2",
+     "7.6"
+    ],
+    "nearLineBoundary": [
+     "P.uranus",
+     "P.neptune",
+     "D.mars"
+    ]
+   }
+  ]
+ },
+ "reflector": {
+  "conversion": "ok",
+  "variants": [
+   {
+    "utc": "1950-07-23T10:54:00.000Z",
+    "offsetMinutes": 0,
+    "designUtc": "1950-04-22T17:34:40.647Z",
+    "solverResidualDeg": -1.42e-9,
+    "type": "reflector",
+    "authority": "lunar",
+    "profile": "4/1",
+    "definition": "none",
+    "definedCenters": [],
+    "personality": [
+     "56.4",
+     "60.4",
+     "25.3",
+     "46.3",
+     "1.1",
+     "7.1",
+     "15.3",
+     "57.5",
+     "37.1",
+     "64.6",
+     "52.4",
+     "48.6",
+     "7.5"
+    ],
+    "design": [
+     "27.1",
+     "28.1",
+     "17.4",
+     "18.4",
+     "15.3",
+     "23.4",
+     "63.6",
+     "6.1",
+     "55.2",
+     "64.2",
+     "15.4",
+     "57.1",
+     "7.3"
+    ],
+    "nearLineBoundary": [
+     "P.moon",
+     "P.mercury",
+     "P.uranus",
+     "D.sun",
+     "D.earth",
+     "D.venus"
+    ]
+   }
+  ]
+ }
+}
