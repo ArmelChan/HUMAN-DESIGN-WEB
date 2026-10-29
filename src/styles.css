@@ -2369,3 +2369,355 @@ table.registry {
   border-top: 1px solid var(--rule);
   padding-top: 0.5rem;
 }
+
+/* ---------- 圖像與圖解 ---------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 300px);
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.hero-wheel {
+  margin: 0;
+  display: grid;
+  gap: 0.4rem;
+  justify-items: center;
+}
+
+.hero-wheel figcaption {
+  display: grid;
+  gap: 0.2rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.hero-now {
+  font-weight: 700;
+}
+
+.gate-wheel {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+}
+
+.gw-gate path {
+  fill: var(--surface);
+  stroke: var(--rule);
+  stroke-width: 0.8;
+}
+
+.gw-gate.is-alt path {
+  fill: var(--surface-2);
+}
+
+.gw-gate text {
+  font-size: 9.5px;
+  fill: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+}
+
+.gw-gate.is-sun path {
+  fill: var(--accent);
+}
+
+.gw-gate.is-sun text {
+  fill: var(--accent-ink);
+  font-weight: 700;
+}
+
+.gw-gate.is-earth path {
+  fill: var(--accent-soft);
+  stroke: var(--accent);
+  stroke-width: 1.5;
+}
+
+.gw-gate.is-earth text {
+  font-weight: 700;
+  fill: var(--ink);
+}
+
+.gw-signs line,
+.gw-signs circle {
+  stroke: var(--rule);
+  stroke-width: 0.8;
+  fill: none;
+}
+
+.gw-signs text {
+  font-size: 8px;
+  fill: var(--muted);
+}
+
+.gw-marker polygon {
+  fill: var(--accent);
+}
+
+.gw-silhouette polygon {
+  fill: none;
+  stroke: var(--center-stroke);
+  stroke-width: 4;
+  opacity: 0.45;
+  stroke-linejoin: round;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .gate-wheel {
+    max-width: min(300px, 80vw);
+  }
+}
+
+.flow-wrap {
+  margin: 0.5rem 0 0;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 0.75rem;
+}
+
+.flow-figure {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.flow-figure.is-wide {
+  aspect-ratio: 860 / 250;
+}
+
+.flow-figure.is-narrow {
+  display: none;
+  aspect-ratio: 360 / 560;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+  .flow-figure.is-wide {
+    display: none;
+  }
+  .flow-figure.is-narrow {
+    display: block;
+  }
+}
+
+.flow-box rect {
+  fill: var(--bg);
+  stroke: var(--center-stroke);
+  stroke-width: 1.5;
+}
+
+.flow-box.tone-personality rect {
+  stroke: var(--line-on);
+  stroke-width: 2.5;
+}
+
+.flow-box.tone-design rect {
+  stroke: var(--design);
+  stroke-width: 2.5;
+}
+
+.flow-step {
+  font-size: 13px;
+  font-weight: 700;
+  fill: var(--accent);
+}
+
+.flow-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  fill: var(--ink);
+}
+
+.flow-line {
+  font-size: 12px;
+  fill: var(--ink-2);
+}
+
+.flow-edge {
+  fill: none;
+  stroke: var(--center-stroke);
+  stroke-width: 1.5;
+}
+
+.flow-arrowhead {
+  fill: var(--center-stroke);
+}
+
+.centers-atlas {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 0.75rem;
+}
+
+.centers-atlas li {
+  margin: 0;
+}
+
+.atlas-card {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: start;
+  padding: 0.75rem;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  color: var(--ink);
+  text-decoration: none;
+  height: 100%;
+}
+
+.atlas-card:hover,
+.atlas-card:focus-visible {
+  border-color: var(--accent);
+}
+
+.atlas-text {
+  display: grid;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.atlas-name {
+  font-weight: 700;
+}
+
+.atlas-roles {
+  font-size: 0.82rem;
+  color: var(--accent);
+}
+
+.atlas-summary {
+  font-size: 0.9rem;
+  color: var(--ink-2);
+  line-height: 1.6;
+}
+
+.center-glyph {
+  display: inline-block;
+  line-height: 0;
+  vertical-align: middle;
+}
+
+.center-glyph svg {
+  display: block;
+  height: auto;
+}
+
+.glyph-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.2rem 0.6rem;
+}
+
+.report-item.has-glyph {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  column-gap: 0.75rem;
+}
+
+.report-item.has-glyph > .center-glyph {
+  grid-row: 1 / span 3;
+  margin-top: 0.4rem;
+}
+
+.report-item.has-glyph > :not(.center-glyph) {
+  grid-column: 2;
+}
+
+.timeline-wrap {
+  margin: 0.5rem 0;
+}
+
+.timeline-scroll {
+  overflow-x: auto;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 0.5rem;
+}
+
+.timeline-figure {
+  display: block;
+  width: 100%;
+  min-width: 560px;
+  height: auto;
+}
+
+.tl-tick line {
+  stroke: var(--rule);
+  stroke-width: 1;
+}
+
+.tl-tick text {
+  font-size: 10.5px;
+  fill: var(--muted);
+}
+
+.tl-tick.is-marker line {
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+
+.tl-tick.is-marker text {
+  fill: var(--accent);
+  font-weight: 700;
+}
+
+.tl-label {
+  font-size: 12px;
+  fill: var(--ink-2);
+}
+
+.tl-row.is-summary .tl-label {
+  font-weight: 700;
+  fill: var(--ink);
+}
+
+.tl-seg rect {
+  fill: var(--surface-2);
+  stroke: var(--center-stroke);
+  stroke-width: 0.6;
+}
+
+.tl-seg.is-alt rect {
+  fill: var(--tube);
+}
+
+.tl-seg text {
+  font-size: 11px;
+  fill: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.lazy-mount[aria-busy='true'] {
+  background: var(--surface-2);
+  border-radius: var(--radius);
+}
+
+.report-cover {
+  margin: 0.5rem 0 1rem;
+}
+
+.cover-frame svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 800 / 460;
+}

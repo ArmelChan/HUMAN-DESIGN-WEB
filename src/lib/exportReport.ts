@@ -26,6 +26,8 @@ export interface ExportOptions {
   provenance: Provenance | null;
   birthSummary: string;
   generatedAt: Date;
+  /** 報告封面 SVG（與網頁相同的 coverSvg 輸出）；只用於 HTML 匯出。 */
+  coverSvg?: string;
 }
 
 export const USAGE_NOTE =
@@ -97,10 +99,11 @@ export function reportToHtml(report: Report, opts: ExportOptions): string {
   return `<!doctype html>
 <html lang="zh-Hant-TW"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${title}</title>
-<style>body{font-family:'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif;line-height:1.8;max-width:46rem;margin:2rem auto;padding:0 1rem;color:#1f1d1a;background:#fff}h1{font-size:1.6rem}h2{font-size:1.15rem;margin-top:2rem;border-bottom:1px solid #ccc}section:first-of-type{border:2px solid #c8773b;padding:0 1rem;border-radius:8px}</style>
+<style>body{font-family:'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif;line-height:1.8;max-width:46rem;margin:2rem auto;padding:0 1rem;color:#1f1d1a;background:#fff}h1{font-size:1.6rem}h2{font-size:1.15rem;margin-top:2rem;border-bottom:1px solid #ccc}section:first-of-type{border:2px solid #c8773b;padding:0 1rem;border-radius:8px}.cover{margin:1rem 0}.cover svg{width:100%;height:auto}</style>
 </head><body>
 <h1>${title}</h1>
 <p>產生時間：${esc(opts.generatedAt.toISOString())}</p>
+${opts.coverSvg ? `<figure class="cover">${opts.coverSvg}</figure>` : ''}
 ${body}
 </body></html>
 `;

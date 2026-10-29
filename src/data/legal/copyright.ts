@@ -5,7 +5,7 @@ import type { LegalSection } from './terms';
 
 export const CONTENT_CLASSES: { id: string; name: string; status: string }[] = [
   { id: 'own-text', name: '本站自行撰寫的文字', status: '說明、反思問題與限制說明為本站撰寫，在 AI 輔助下起草並經編輯。本站只就確實擁有的部分主張權利，權利人：' + operatorValue('legalName') + '。' },
-  { id: 'own-ui', name: '本站自行設計的圖像與介面', status: '介面與 BodyGraph 座標為本站繪製；BodyGraph 的整體配置與名稱權利另列於素材登錄，待確認。' },
+  { id: 'own-ui', name: '本站自行設計的圖像與介面', status: '介面、BodyGraph 座標與五組圖解（閘門輪、排圖流程、中心小圖、時間軸、報告封面）皆由本站程式繪製，未使用圖像生成模型或第三方圖檔；BodyGraph 的整體配置、閘門排列與名稱權利另列於素材登錄，待確認。' },
   { id: 'oss', name: '開源程式碼', status: '依各自授權使用，授權全文保留於來源頁「第三方元件授權」。' },
   { id: 'rules', name: '第三方排圖規則與資料表', status: '閘門順序、關鍵詞與通道名稱源自人類圖體系，權利狀態待確認（見素材登錄）。' },
   { id: 'third-media', name: '第三方圖片、字型與圖示', status: '本站沒有使用第三方圖片、字型或圖示。' },

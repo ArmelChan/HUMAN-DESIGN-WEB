@@ -123,7 +123,12 @@ async function fillBirth(page, { date, time, mode = 'exact', tz = 'Asia/Taipei' 
   await p.check('#consent-terms');
   await p.click('#generate');
   await p.waitForSelector('#report-h');
-  const dayText = await p.locator('#result').innerText();
+  // 時間軸的刻度本來就會出現 12:00，所以排除時間軸後再檢查「沒有以中午代表全天」
+  const dayText = await p.locator('#result').evaluate((el) => {
+    const c = el.cloneNode(true);
+    c.querySelectorAll('[data-figure="uncertainty-timeline"]').forEach((n) => n.remove());
+    return c.textContent;
+  });
   check('只知道日期：48 個時刻、不以中午代表', dayText.includes('共 48 個時刻') && !dayText.includes('12:00') && dayText.includes('無法確定'), dayText.slice(0, 200));
 
   // 本機保存、重新載入、取消、版本更新、清除
@@ -193,7 +198,7 @@ async function fillBirth(page, { date, time, mode = 'exact', tz = 'Asia/Taipei' 
   check('隱私聲明頁：資料流程表與 AI 說明', (await p.locator('main table tbody tr').count()) >= 5 && priv.includes('沒有任何 AI 功能'));
   await p.goto(BASE + '#/copyright');
   const rows = await p.locator('table.registry tbody tr').count();
-  check('版權頁：素材登錄 17 項，含待確認', rows === 17 && (await p.locator('table.registry .vstatus-pending').count()) > 0, String(rows));
+  check('版權頁：素材登錄 22 項，含待確認', rows === 22 && (await p.locator('table.registry .vstatus-pending').count()) > 0, String(rows));
   await p.goto(BASE + '#/sources');
   check('來源頁：第三方授權全文仍在', (await p.locator('#licenses').innerText()).includes('astronomy-engine 2.1.19'));
   await p.goto(BASE + '#/verification');

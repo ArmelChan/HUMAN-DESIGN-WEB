@@ -3,7 +3,7 @@
 線上版本：https://claude.ai/artifact/GuYMvFZNZoCnqiKpb2CkDY（單一檔案版，由 `npm run build:artifact` 產生）
 
 以互動 BodyGraph 為主要工具，介紹人類圖（Human Design）的能量中心、通道、閘門、類型、策略、內在權威與人生角色。
-本站**不提供個人排圖**，也不提供醫療、心理或命運方面的判斷。
+個人排圖在瀏覽器內計算（見下方「個人排圖」）；本站不提供醫療、心理或命運方面的判斷。
 
 ## 開發
 
@@ -74,6 +74,11 @@ npm run build      # 輸出至 dist/（相對路徑，可放任何靜態主機�
 - 提問指引（`src/lib/safety.ts`，`#/ask`）：固定規則，沒有 AI。對診斷、用藥、死亡預測、重大決定給出界線回覆；危機訊號會停止解讀，提示聯絡當地緊急服務，不編造電話。
 - 同意（`src/lib/consent.ts`）：條款接受、本機保存、AI 外傳、行銷四項分開；預設都不勾選；本版本沒有 AI 與行銷功能，因此後兩項只有說明、沒有勾選框。條款版本變更時需要重新接受。
 
+## 圖解（`src/figures/`）
+
+五組圖解都由程式以 SVG 繪製，文字是可選取、可朗讀的 SVG／HTML 文字，沒有使用圖像生成模型或第三方圖檔。
+個人化的圖（報告封面、中心小圖、時間軸）直接由排圖資料產生，測試會核對圖與資料一致。清單、使用位置與授權狀態見 `docs/FIGURES.md`。
+
 ## 條款、隱私與版權（草稿）
 
 `#/terms`、`#/privacy`、`#/copyright` 三個頁面都是**待法律審閱的草稿**，未生效。營運者欄位未填，公開上線前的阻擋事項見 `docs/OPERATOR_TODO.md`。
@@ -84,6 +89,7 @@ npm run build      # 輸出至 dist/（相對路徑，可放任何靜態主機�
 ```bash
 npm run build && npx vite preview --port 4173 --strictPort &
 NODE_PATH=$(npm root -g) node e2e/site.e2e.cjs
+NODE_PATH=$(npm root -g) node e2e/figures.e2e.cjs   # 圖解：資料一致、破圖、深色模式、手機寬度
 ```
 
 需要全域安裝的 Playwright（本專案未列為相依套件）。

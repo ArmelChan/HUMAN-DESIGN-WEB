@@ -27,21 +27,32 @@ export interface DayRangeResult {
   /** 全天不變的啟動點所在閘門，供圖上顯示。 */
   stableGates: Map<number, 'personality' | 'design' | 'both'>;
   charts: Chart[];
+  /** 與 charts 對應的當地時間標籤。夏令時間結束時重複的時刻標示第一次、第二次。 */
+  labels: string[];
 }
 
 export function computeDayRange(date: string, zone: string, offsetMinutes?: number): DayRangeResult {
   const [year, month, day] = date.split('-').map(Number);
   const charts: Chart[] = [];
+  const labels: string[] = [];
   for (let m = 0; m < 24 * 60; m += 30) {
     const local = { year, month, day, hour: Math.floor(m / 60), minute: m % 60 };
+    const hhmm = `${String(local.hour).padStart(2, '0')}:${String(local.minute).padStart(2, '0')}`;
     if (offsetMinutes !== undefined) {
       const wall = Date.UTC(year, month - 1, day, local.hour, local.minute);
       charts.push(computeChart(new Date(wall - offsetMinutes * 60000)));
+      labels.push(hhmm);
       continue;
     }
     const conv = localToUtc(local, zone);
-    if (conv.kind === 'ok') charts.push(computeChart(conv.utc));
-    else if (conv.kind === 'ambiguous') for (const o of conv.options) charts.push(computeChart(o.utc));
+    if (conv.kind === 'ok') {
+      charts.push(computeChart(conv.utc));
+      labels.push(hhmm);
+    } else if (conv.kind === 'ambiguous')
+      conv.options.forEach((o, i) => {
+        charts.push(computeChart(o.utc));
+        labels.push(`${hhmm}（第${i === 0 ? '一' : '二'}次）`);
+      });
     else if (conv.kind === 'invalid') throw new Error(conv.reason);
     // nonexistent：夏令時間跳過的時段沒有對應時刻，略過。
   }
@@ -87,5 +98,6 @@ export function computeDayRange(date: string, zone: string, offsetMinutes?: numb
     variable,
     stableGates,
     charts,
+    labels,
   };
 }

@@ -8,6 +8,9 @@ import type { Report } from '../lib/report';
 import { ANSWER_LABEL, BIRTH_DATA_WARNING, USAGE_NOTE, reportToHtml, reportToText, type ReflectionAnswer, type ReflectionEntry } from '../lib/exportReport';
 import type { Provenance } from '../lib/chart';
 import type { Selection } from '../lib/selection';
+import { coverSvg, type CoverModel } from '../lib/reportCover';
+import { ReportCover } from '../figures/ReportCover';
+import { CenterGlyph, GlyphLegend } from '../figures/CenterGlyph';
 
 interface Props {
   report: Report;
@@ -16,6 +19,7 @@ interface Props {
   onSelect: (sel: Selection) => void;
   provenance: Provenance | null;
   birthSummary: string;
+  cover: CoverModel;
 }
 
 const SECTIONS = [
@@ -30,7 +34,7 @@ const SECTIONS = [
 
 const EMPTY_ENTRY: ReflectionEntry = { answer: null, example: '', counterExample: '' };
 
-export function ReportView({ report, reflection, onReflection, onSelect, provenance, birthSummary }: Props) {
+export function ReportView({ report, reflection, onReflection, onSelect, provenance, birthSummary, cover }: Props) {
   const areas: ReflectionArea[] = ['emotion', 'relationship', 'work', 'direction'];
   const answered = report.reflection.filter((p) => reflection[p.id]?.answer).length;
   const disagreed = report.reflection.filter((p) => reflection[p.id]?.answer === 'disagree').length;
@@ -44,6 +48,7 @@ export function ReportView({ report, reflection, onReflection, onSelect, provena
   return (
     <section className="section report" aria-labelledby="report-h">
       <h2 id="report-h">個人報告</h2>
+      <ReportCover model={cover} />
       <p className="report-notice">{report.notice}</p>
       <nav className="report-nav" aria-label="報告段落">
         {SECTIONS.map(([id, label]) => (
@@ -76,8 +81,10 @@ export function ReportView({ report, reflection, onReflection, onSelect, provena
           2. 人類圖體系解釋 <LayerTag layer="system" />
         </h3>
         <p className="muted small">以下是人類圖體系的說法，依你圖中的元素選出；它們沒有經過科學驗證。有些描述也適用於許多人，請對照自己的經驗判斷。</p>
+        <GlyphLegend />
         {report.system.map((i) => (
-          <article key={i.id} className="report-item">
+          <article key={i.id} className={`report-item${i.centerId ? ' has-glyph' : ''}`}>
+            {i.centerId && <CenterGlyph id={i.centerId} state={i.centerStatus ?? 'neutral'} width={44} />}
             <h4>{i.heading}</h4>
             <p>{i.text}</p>
             <p className="muted small">
@@ -223,7 +230,7 @@ export function ReportView({ report, reflection, onReflection, onSelect, provena
         </p>
       </section>
 
-      <ExportPanel report={report} reflection={reflection} provenance={provenance} birthSummary={birthSummary} />
+      <ExportPanel report={report} reflection={reflection} provenance={provenance} birthSummary={birthSummary} cover={cover} />
     </section>
   );
 }
@@ -233,17 +240,27 @@ function ExportPanel({
   reflection,
   provenance,
   birthSummary,
+  cover,
 }: {
   report: Report;
   reflection: Record<string, ReflectionEntry>;
   provenance: Provenance | null;
   birthSummary: string;
+  cover: CoverModel;
 }) {
   const [title, setTitle] = useState('');
   const [includeReflection, setIncludeReflection] = useState(false);
   const [confirmed, setConfirmed] = useState(false);
   const [status, setStatus] = useState('');
-  const opts = () => ({ title, includeReflection, reflection, provenance, birthSummary, generatedAt: new Date() });
+  const opts = () => ({
+    title,
+    includeReflection,
+    reflection,
+    provenance,
+    birthSummary,
+    generatedAt: new Date(),
+    coverSvg: coverSvg({ ...cover, title: title.trim() || cover.title }),
+  });
 
   const download = () => {
     const html = reportToHtml(report, opts());

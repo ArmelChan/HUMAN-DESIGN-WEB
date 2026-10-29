@@ -30,6 +30,11 @@ import { LINES } from '../data/content/profiles';
 import { CENTERS, CENTER_ORDER, type CenterId } from '../data/structure';
 import type { CenterState, DefinitionKind } from '../lib/derive';
 import type { Selection } from '../lib/selection';
+import { coverFromChart, coverFromDay } from '../lib/reportCover';
+import { approxSamples, daySamples } from '../lib/timeline';
+import { ChartingFlow } from '../figures/ChartingFlow';
+import { UncertaintyTimeline } from '../figures/UncertaintyTimeline';
+import { LazyMount } from '../figures/LazyMount';
 
 type TimeMode = 'exact' | 'approx' | 'dateOnly';
 
@@ -254,6 +259,11 @@ export function ChartPage() {
         <p>{DISCLAIMER}</p>
       </Callout>
 
+      <section className="section" aria-labelledby="flow-fig-h">
+        <h2 id="flow-fig-h">計算流程</h2>
+        <ChartingFlow />
+      </section>
+
       <form className="chart-form" onSubmit={submit} noValidate aria-labelledby="form-h">
         <h2 id="form-h">出生資料</h2>
         <div className="form-grid">
@@ -471,6 +481,15 @@ function ChartResult({ result, selection, onSelect, reflection, onReflection }: 
   }, [chart, d]);
   const localText = `${local.year}-${pad(local.month)}-${pad(local.day)} ${pad(local.hour)}:${pad(local.minute)}`;
   const birthSummary = `出生資料：${localText}・${zoneText}・${formatOffset(offsetMinutes)}（${chart.provenance.input?.precision ?? ''}）`;
+  const cover = useMemo(
+    () =>
+      coverFromChart(chart, {
+        birthLine: `${localText}・${zoneText}・${formatOffset(offsetMinutes)}`,
+        modeLabel: result.sensitivity ? `出生時間約略（±${result.sensitivity.rangeMinutes} 分鐘）` : '出生時間精確',
+        generatedAt: new Date(),
+      }),
+    [chart, localText, zoneText, offsetMinutes, result.sensitivity],
+  );
 
   const nodeDiffs = (['personality', 'design'] as const).flatMap((side) =>
     chart[side]
@@ -537,8 +556,19 @@ function ChartResult({ result, selection, onSelect, reflection, onReflection }: 
         />
       </div>
 
-      <ReportView report={report} reflection={reflection} onReflection={onReflection} onSelect={onSelect} provenance={chart.provenance} birthSummary={birthSummary} />
+      <ReportView report={report} reflection={reflection} onReflection={onReflection} onSelect={onSelect} provenance={chart.provenance} birthSummary={birthSummary} cover={cover} />
 
+      {result.sensitivity && (
+        <section className="section" aria-labelledby="tl-h">
+          <h3 id="tl-h">出生時間不確定性</h3>
+          <LazyMount minHeight={260} label="正在準備時間軸">
+            {() => {
+              const { samples, markerIndex } = approxSamples(chart.birthUtc, result.sensitivity!.rangeMinutes);
+              return <UncertaintyTimeline samples={samples} markerIndex={markerIndex} caption={`輸入時刻前後 ±${result.sensitivity!.rangeMinutes} 分鐘內的計算結果`} />;
+            }}
+          </LazyMount>
+        </section>
+      )}
       {result.sensitivity && <SensitivityView report={result.sensitivity} />}
 
       <section className="section" aria-labelledby="act-h">
@@ -598,6 +628,7 @@ function DayResult({ result, selection, onSelect, reflection, onReflection }: Re
     };
   }, [day]);
   const show = (v: string | null) => v ?? '無法確定';
+  const cover = useMemo(() => coverFromDay(day, { birthLine: `${day.date}（不知道出生時間）・${zoneText}`, generatedAt: new Date() }), [day, zoneText]);
 
   return (
     <section id="result" className="section" aria-labelledby="result-h">
@@ -631,7 +662,11 @@ function DayResult({ result, selection, onSelect, reflection, onReflection }: Re
           graphDescription={`只顯示 ${day.date} 全天都不變的閘門：${[...activeGates].sort((x, y) => x - y).join('、')}。實心中心為全天都有定義；虛線中心表示沒有定義或無法確定。`}
         />
       </div>
-      <ReportView report={report} reflection={reflection} onReflection={onReflection} onSelect={onSelect} provenance={null} birthSummary={`出生資料：${day.date}（不知道出生時間）・${zoneText}`} />
+      <section className="section" aria-labelledby="tl-day-h">
+        <h3 id="tl-day-h">這一天之中的變化</h3>
+        <UncertaintyTimeline samples={daySamples(day)} markerIndex={null} caption={`${day.date} 當地 00:00–23:30 每 30 分鐘的計算結果`} />
+      </section>
+      <ReportView report={report} reflection={reflection} onReflection={onReflection} onSelect={onSelect} provenance={null} birthSummary={`出生資料：${day.date}（不知道出生時間）・${zoneText}`} cover={cover} />
       <QuestionGuide headingId="ask-in-day-h" />
     </section>
   );

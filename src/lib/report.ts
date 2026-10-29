@@ -30,6 +30,7 @@ export interface ReportItem {
   basis: string;
   layer: Layer;
   centerId?: CenterId;
+  centerStatus?: 'defined' | 'notDefined' | 'uncertain';
 }
 
 export interface ReflectionPrompt {
@@ -213,6 +214,7 @@ export function buildReport(input: ReportInput, options: { subjectIsMinor: boole
       basis: `${CENTERS[id].name}的定義狀態`,
       layer: 'system',
       centerId: id,
+      centerStatus: status,
     });
   }
   for (const chId of core.channels) {

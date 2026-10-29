@@ -152,7 +152,23 @@ export function CopyrightPage() {
               <tbody>
                 {ASSETS.filter((a) => a.category === cat).map((a) => (
                   <tr key={a.id} id={`asset-${a.id}`}>
-                    <th scope="row">{a.name}</th>
+                    <th scope="row">
+                      {a.name}
+                      {a.origin && (
+                        <span className="muted small">
+                          <br />
+                          產生方式：{a.origin === 'original-code' ? '原創程式繪製' : a.origin === 'ai-generated' ? '外部 AI 生成' : '第三方素材'}
+                          {a.file && `・${a.file}`}
+                          {a.createdAt && `・建立 ${a.createdAt}`}
+                          {a.tool && (
+                            <>
+                              <br />
+                              工具：{a.tool}
+                            </>
+                          )}
+                        </span>
+                      )}
+                    </th>
                     <td>
                       {a.rightsHolder}
                       {a.sourceUrl && (

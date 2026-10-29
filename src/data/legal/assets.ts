@@ -41,6 +41,11 @@ export interface AssetRecord {
   checkedAt: string;
   status: 'confirmed' | 'pending';
   note: string;
+  /** 本站製作的圖像才有：產生方式、工具、檔案與日期。 */
+  origin?: 'original-code' | 'ai-generated' | 'third-party';
+  tool?: string;
+  file?: string;
+  createdAt?: string;
 }
 
 const CHECKED = '2026-10-29';
@@ -336,6 +341,118 @@ export const ASSETS: AssetRecord[] = [
     note: '',
   },
 ];
+
+// 本站製作的圖像：全部以程式繪製 SVG，未使用任何圖像生成模型或第三方圖檔。
+const FIGURE_TOOL = 'TypeScript／React 程式繪製 SVG；繪圖程式在 AI（Claude）輔助下撰寫並經人工指示與檢查；未使用圖像生成模型';
+const FIGURE_OWNER = '本站（權利歸屬待營運者確認；AI 輔助撰寫的程式產出未必都能取得著作權保護）';
+
+ASSETS.push(
+  {
+    id: 'figure-gate-wheel',
+    name: '首頁主視覺：閘門輪',
+    category: 'graphic',
+    sourceUrl: null,
+    rightsHolder: FIGURE_OWNER,
+    license: '本站原創圖像（授權條件待營運者決定）',
+    licenseVersion: null,
+    evidence: 'src/figures/GateWheel.tsx；資料取自規則表 src/data/rules/mandala.ts',
+    commercialUse: 'unknown',
+    modification: 'unknown',
+    attribution: '無第三方署名義務。',
+    scope: '首頁；不含個人資料（只顯示裝置目前時間的太陽位置）',
+    checkedAt: CHECKED,
+    status: 'pending',
+    note: '圖像本身為本站設計，未複製 Jovian Archive 的 Rave Mandala 圖像；但閘門排列規則資料的權利狀態待確認（見 gate-wheel-order），因此本項一併列為待確認。',
+    origin: 'original-code',
+    tool: FIGURE_TOOL,
+    file: 'src/figures/GateWheel.tsx',
+    createdAt: CHECKED,
+  },
+  {
+    id: 'figure-charting-flow',
+    name: '排圖流程圖',
+    category: 'graphic',
+    sourceUrl: null,
+    rightsHolder: FIGURE_OWNER,
+    license: '本站原創圖像（授權條件待營運者決定）',
+    licenseVersion: null,
+    evidence: 'src/figures/ChartingFlow.tsx',
+    commercialUse: 'unknown',
+    modification: 'unknown',
+    attribution: '無第三方署名義務。',
+    scope: '個人排圖頁；不含個人資料',
+    checkedAt: CHECKED,
+    status: 'confirmed',
+    note: '已查核：只描述本站自己的計算步驟，沒有使用第三方圖像或圖示。「已確認」只代表沒有第三方素材，不代表可任意商用。',
+    origin: 'original-code',
+    tool: FIGURE_TOOL,
+    file: 'src/figures/ChartingFlow.tsx',
+    createdAt: CHECKED,
+  },
+  {
+    id: 'figure-center-glyph',
+    name: '九大中心小圖與中心總覽',
+    category: 'graphic',
+    sourceUrl: null,
+    rightsHolder: FIGURE_OWNER,
+    license: '本站原創圖像（授權條件待營運者決定）',
+    licenseVersion: null,
+    evidence: 'src/figures/CenterGlyph.tsx；繪圖幾何取自 src/data/geometry.ts',
+    commercialUse: 'unknown',
+    modification: 'unknown',
+    attribution: '無第三方署名義務。',
+    scope: '中心頁總覽、報告的體系解釋段；報告中的小圖依使用者的排圖狀態上色',
+    checkedAt: CHECKED,
+    status: 'pending',
+    note: '使用與互動 BodyGraph 相同的自繪幾何；BodyGraph 配置與名稱的權利待確認（見 bodygraph-layout）。不含器官、醫學影像或診斷式標示。',
+    origin: 'original-code',
+    tool: FIGURE_TOOL,
+    file: 'src/figures/CenterGlyph.tsx',
+    createdAt: CHECKED,
+  },
+  {
+    id: 'figure-uncertainty-timeline',
+    name: '出生時間不確定性時間軸',
+    category: 'graphic',
+    sourceUrl: null,
+    rightsHolder: FIGURE_OWNER,
+    license: '本站原創圖像（授權條件待營運者決定）',
+    licenseVersion: null,
+    evidence: 'src/figures/UncertaintyTimeline.tsx；資料由 src/lib/timeline.ts 逐點計算',
+    commercialUse: 'unknown',
+    modification: 'unknown',
+    attribution: '無第三方署名義務。',
+    scope: '約略與只知道日期的排圖結果；含使用者的出生時間衍生資料，只在瀏覽器中顯示',
+    checkedAt: CHECKED,
+    status: 'confirmed',
+    note: '已查核：圖表形式為一般時間軸，沒有使用第三方素材。',
+    origin: 'original-code',
+    tool: FIGURE_TOOL,
+    file: 'src/figures/UncertaintyTimeline.tsx',
+    createdAt: CHECKED,
+  },
+  {
+    id: 'figure-report-cover',
+    name: '個人報告封面模板',
+    category: 'graphic',
+    sourceUrl: null,
+    rightsHolder: FIGURE_OWNER,
+    license: '本站原創圖像（授權條件待營運者決定）',
+    licenseVersion: null,
+    evidence: 'src/lib/reportCover.ts、src/figures/ReportCover.tsx',
+    commercialUse: 'unknown',
+    modification: 'unknown',
+    attribution: '無第三方署名義務。',
+    scope: '報告頂端與匯出的 HTML；含使用者的排圖結果與出生資料摘要',
+    checkedAt: CHECKED,
+    status: 'pending',
+    note: '封面內含 BodyGraph（權利待確認，見 bodygraph-layout）。商業再發布權限未決定。',
+    origin: 'original-code',
+    tool: FIGURE_TOOL,
+    file: 'src/lib/reportCover.ts',
+    createdAt: CHECKED,
+  },
+);
 
 export const assetSummary = () => ({
   total: ASSETS.length,
