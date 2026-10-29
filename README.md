@@ -1,5 +1,7 @@
 # 人類圖圖解（繁體中文人類圖互動資訊網站）
 
+線上版本：https://claude.ai/artifact/GuYMvFZNZoCnqiKpb2CkDY（單一檔案版，由 `npm run build:artifact` 產生）
+
 以互動 BodyGraph 為主要工具，介紹人類圖（Human Design）的能量中心、通道、閘門、類型、策略、內在權威與人生角色。
 本站**不提供個人排圖**，也不提供醫療、心理或命運方面的判斷。
 
