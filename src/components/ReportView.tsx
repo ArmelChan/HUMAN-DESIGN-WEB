@@ -1,6 +1,6 @@
 // 七段式個人報告。限制與來源兩段不收合，必要提示在結果頁與匯出檔都會出現。
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { LayerTag } from './Common';
 import { AREA_LABEL, type ReflectionArea } from '../data/content/reflection';
 import { EDUCATION_SOURCES } from '../data/content/education';
@@ -9,6 +9,7 @@ import { ANSWER_LABEL, BIRTH_DATA_WARNING, USAGE_NOTE, reportToHtml, reportToTex
 import type { Provenance } from '../lib/chart';
 import type { Selection } from '../lib/selection';
 import { coverSvg, type CoverModel } from '../lib/reportCover';
+import { SAVE_MESSAGE, platformDownloads, saveFile } from '../lib/saveFile';
 import { ReportCover } from '../figures/ReportCover';
 import { CenterGlyph, GlyphLegend } from '../figures/CenterGlyph';
 
@@ -262,18 +263,20 @@ function ExportPanel({
     coverSvg: coverSvg({ ...cover, title: title.trim() || cover.title }),
   });
 
-  const download = () => {
-    const html = reportToHtml(report, opts());
-    const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'human-design-report.html';
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    window.setTimeout(() => URL.revokeObjectURL(url), 1000);
-    setStatus('已產生 HTML 檔。若瀏覽器沒有開始下載（部分內嵌環境會阻擋），請改用「複製純文字」。');
+  const [canSave, setCanSave] = useState(true);
+  const [saving, setSaving] = useState(false);
+  // 先確認是否在 claude.ai 檢視器中；這一步不會跳出提示
+  useEffect(() => {
+    void platformDownloads();
+  }, []);
+
+  const download = async () => {
+    setSaving(true);
+    setStatus('正在準備下載…');
+    const outcome = await saveFile('human-design-report.html', reportToHtml(report, opts()), 'text/html;charset=utf-8');
+    if (outcome === 'unavailable') setCanSave(false);
+    setStatus(SAVE_MESSAGE[outcome]);
+    setSaving(false);
   };
   const copy = async () => {
     const text = reportToText(report, opts());
@@ -302,9 +305,11 @@ function ExportPanel({
         我了解匯出內容含有出生資料{includeReflection ? '與我的反思筆記' : ''}
       </label>
       <div className="form-actions">
-        <button type="button" className="btn" disabled={!confirmed} onClick={download}>
-          下載 HTML 報告
-        </button>
+        {canSave && (
+          <button id="export-download" type="button" className="btn" disabled={!confirmed || saving} onClick={download}>
+            下載 HTML 報告
+          </button>
+        )}
         <button type="button" className="btn btn-quiet" disabled={!confirmed} onClick={copy}>
           複製純文字
         </button>

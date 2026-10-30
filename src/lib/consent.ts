@@ -2,7 +2,7 @@
 // 只記錄條款版本與接受時間。只存在使用者瀏覽器中，不構成跨裝置或對第三方的證明。
 
 export const TERMS_VERSION = 'terms-draft-0.1';
-export const PRIVACY_VERSION = 'privacy-draft-0.1';
+export const PRIVACY_VERSION = 'privacy-draft-0.2';
 
 export interface ConsentRecord {
   termsVersion: string;
