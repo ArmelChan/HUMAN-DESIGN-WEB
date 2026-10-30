@@ -1,4 +1,5 @@
 import { BodyGraph } from '../components/BodyGraph';
+import { CentersAtlas } from '../figures/CenterGlyph';
 import { LayerTag, NotFoundBlock, ShareButton, VerificationBadge } from '../components/Common';
 import { CENTER_CONTENT, CENTER_STATE_NOTES } from '../data/content/centers';
 import { CENTERS, CENTER_ORDER, ROLE_LABEL, channelsOfCenter, type CenterId, type CenterRole } from '../data/structure';
@@ -79,20 +80,7 @@ export function CentersPage() {
 
       <section className="section" aria-labelledby="list-h">
         <h2 id="list-h">逐一閱讀</h2>
-        <ol className="center-list">
-          {CENTER_ORDER.map((id, i) => (
-            <li key={id}>
-              <a href={`#/centers/${id}`}>
-                <span className="num">{i + 1}</span>
-                <span>
-                  <strong>{CENTERS[id].name}</strong> <span className="en">{CENTERS[id].english}</span>
-                  <br />
-                  <span className="muted">{CENTER_CONTENT[id].summary}</span>
-                </span>
-              </a>
-            </li>
-          ))}
-        </ol>
+        <CentersAtlas />
       </section>
     </div>
   );

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { BodyGraph } from './BodyGraph';
-import { DetailPanel } from './DetailPanel';
+import { DetailPanel, type PersonalContext } from './DetailPanel';
 import { CENTERS, getChannel, getGate } from '../data/structure';
 import { CENTER_STATE_NOTES } from '../data/content/centers';
 import type { CenterState } from '../lib/derive';
@@ -15,6 +15,7 @@ interface Props {
   activeGates?: Set<number>;
   onToggleGate?: (n: number) => void;
   gateSources?: Map<number, GateSource>;
+  personal?: PersonalContext;
   graphTitle: string;
   graphDescription: string;
   /** 圖上方的模式標示，例如「結構圖」「規則實驗：非個人人類圖」。 */
@@ -36,6 +37,7 @@ export function Explorer({
   activeGates,
   onToggleGate,
   gateSources,
+  personal,
   graphTitle,
   graphDescription,
   modeLabel,
@@ -91,7 +93,7 @@ export function Explorer({
         </div>
         <div className="sheet-body">
           {aside}
-          <DetailPanel selection={selection} onSelect={onSelect} centerStates={centerStates} />
+          <DetailPanel selection={selection} onSelect={onSelect} centerStates={centerStates} personal={personal} />
         </div>
       </div>
     </div>

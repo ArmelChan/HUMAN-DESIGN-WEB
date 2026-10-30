@@ -5,7 +5,7 @@
 （單一檔案版，由 `npm run build:artifact` 產生）
 
 以互動 BodyGraph 為主要工具，介紹人類圖（Human Design）的能量中心、通道、閘門、類型、策略、內在權威與人生角色。
-本站**不提供個人排圖**，也不提供醫療、心理或命運方面的判斷。
+個人排圖在瀏覽器內計算（見下方「個人排圖」）；本站不提供醫療、心理或命運方面的判斷。
 
 ## 開發
 
@@ -65,6 +65,41 @@ npm run build      # 輸出至 dist/（相對路徑，可放任何靜態主機�
 | `src/lib/validation.test.ts` | 30 組合成測例；預期值只用獨立事實或規則推導；`internal-snapshot.json` 僅作回歸比對 |
 
 所有測例的外部比對欄位為 `pending_external_validation`。更新快照：`UPDATE_SNAPSHOT=1 npx vitest run src/lib/validation.test.ts`。
+
+## 個人報告、反思與同意（report-1.0.0）
+
+- 時間準確度分三種：精確、約略（±15–120 分鐘）、只知道日期。只知道日期時，計算當地全天每 30 分鐘的結果，只採用全天不變的部分，不以中午或任何單一時刻代表出生時間（`src/lib/dayRange.ts`）。
+- 輸入時即時顯示 UTC 換算預覽，含夏令時間的重複與不存在時刻提示。
+- 報告七段（`src/lib/report.ts`）：計算結果、體系解釋、自我觀察與反思、一般健康與心理教育（不依圖表個人化，轉述 WHO）、象徵性人生方向、限制、來源與版權。報告產生器不接受姓名、性別、職業；反思回應不會改變報告。
+- 反思：符合／不符合／不確定，加上例子與反例；不計分、不是量表。
+- 匯出：HTML 下載與純文字複製，固定保留首尾聲明、限制、驗證狀態、來源與使用範圍（`src/lib/exportReport.ts`）。
+- 下載（`src/lib/saveFile.ts`）：在 claude.ai 檢視器中使用平台的 `downloads` 功能（發布時須宣告 `capabilities: {downloads: true}`），由檢視器顯示檔名與大小請使用者確認；取消、格式不允許或環境不支援時顯示原因並建議「複製純文字」，不自動重試。其他環境用一般瀏覽器下載。
+- 提問指引（`src/lib/safety.ts`，`#/ask`）：固定規則，沒有 AI。對診斷、用藥、死亡預測、重大決定給出界線回覆；危機訊號會停止解讀，提示聯絡當地緊急服務，不編造電話。
+- 同意（`src/lib/consent.ts`）：條款接受、本機保存、AI 外傳、行銷四項分開；預設都不勾選；本版本沒有 AI 與行銷功能，因此後兩項只有說明、沒有勾選框。條款版本變更時需要重新接受。
+
+## 圖解（`src/figures/`）
+
+五組圖解都由程式以 SVG 繪製，文字是可選取、可朗讀的 SVG／HTML 文字，沒有使用圖像生成模型或第三方圖檔。
+個人化的圖（報告封面、中心小圖、時間軸）直接由排圖資料產生，測試會核對圖與資料一致。清單、使用位置與授權狀態見 `docs/FIGURES.md`。
+
+## 條款、隱私與版權（草稿）
+
+`#/terms`、`#/privacy`、`#/copyright` 三個頁面都是**待法律審閱的草稿**，未生效。營運者欄位未填，公開上線前的阻擋事項見 `docs/OPERATOR_TODO.md`。
+第三方素材登錄在 `src/data/legal/assets.ts`；開源授權全文由 `npm run licenses` 從 node_modules 產生。
+
+## 瀏覽器測試
+
+```bash
+npm run build && npx vite preview --port 4173 --strictPort &
+NODE_PATH=$(npm root -g) node e2e/site.e2e.cjs
+NODE_PATH=$(npm root -g) node e2e/figures.e2e.cjs   # 圖解：資料一致、破圖、深色模式、手機寬度
+NODE_PATH=$(npm root -g) node e2e/downloads.e2e.cjs # 下載：模擬 claude.ai 檢視器的各種回應
+```
+
+單一檔案版也可以用同樣的測試：把 `dist-artifact/human-design.html` 包上平台會加的外框（doctype、`<meta charset>`、`<meta name=viewport>`）後以 UTF-8 提供，
+再把 `BASE` 環境變數設為該網址。直接開啟未包外框的檔案時沒有 viewport 設定，手機寬度的檢查會失敗，這不代表線上版有問題。
+
+需要全域安裝的 Playwright（本專案未列為相依套件）。
 
 ## 尚未完成
 

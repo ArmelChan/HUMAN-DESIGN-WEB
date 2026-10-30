@@ -11,6 +11,8 @@ import { LabPage } from './pages/Lab';
 import { GlossaryPage } from './pages/Glossary';
 import { SourcesPage } from './pages/Sources';
 import { NotFoundBlock } from './components/Common';
+import { CopyrightPage, PrivacyPage, TermsPage } from './pages/Legal';
+import { AskPage } from './pages/Ask';
 import { DISCLAIMER } from './data/disclaimer';
 
 // 排圖頁含天文計算函式庫，延遲載入以免拖慢其他頁面。
@@ -46,6 +48,7 @@ const NAV: { href: string; label: string; match: string }[] = [
   { href: '#/gates', label: '閘門', match: 'gates' },
   { href: '#/lab', label: '規則實驗室', match: 'lab' },
   { href: '#/glossary', label: '詞彙', match: 'glossary' },
+  { href: '#/ask', label: '提問指引', match: 'ask' },
   { href: '#/verification', label: '計算驗證', match: 'verification' },
   { href: '#/sources', label: '來源', match: 'sources' },
 ];
@@ -77,6 +80,14 @@ function renderPage(route: Route): { title: string; node: ReactNode } {
           </LoadBoundary>
         ),
       };
+    case 'terms':
+      return { title: '使用條款', node: <TermsPage /> };
+    case 'privacy':
+      return { title: '隱私聲明', node: <PrivacyPage /> };
+    case 'copyright':
+      return { title: '版權與使用指引', node: <CopyrightPage /> };
+    case 'ask':
+      return { title: '提問指引', node: <AskPage /> };
     case 'intro':
       return { title: '人類圖入門', node: <IntroPage /> };
     case 'centers':
@@ -154,11 +165,15 @@ export function App() {
       </main>
       <footer className="site-footer">
         <p>{DISCLAIMER}</p>
+        <nav aria-label="條款與政策" className="footer-links">
+          <a href="#/terms">使用條款（草稿）</a>
+          <a href="#/privacy">隱私聲明（草稿）</a>
+          <a href="#/copyright">版權與使用指引</a>
+          <a href="#/sources">來源與第三方授權</a>
+          <a href="#/verification">計算驗證</a>
+        </nav>
         <p>
-          本站是人類圖（Human Design）的資訊整理網站。個人排圖在你的瀏覽器內計算，出生資料不會上傳；本站不提供醫療、心理或命運方面的判斷。人類圖的主張未經科學研究證實，內容中的「體系說法」是對該體系的轉述。
-        </p>
-        <p>
-          BodyGraph 為本站自行繪製的示意圖。「Human Design」相關名稱與原始教材的權利屬於各自的權利人。<a href="#/sources">來源與編輯註記</a>
+          BodyGraph 為本站自行繪製的示意圖。「Human Design」相關名稱與原始教材的權利屬於各自的權利人；本站不是 Jovian Archive 的官方網站，不使用其標誌或認證字樣。
         </p>
       </footer>
     </>

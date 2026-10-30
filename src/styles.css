@@ -2142,3 +2142,582 @@ fieldset {
   white-space: pre-wrap;
   overflow-x: auto;
 }
+
+/* ---------- 同意、報告、反思、匯出 ---------- */
+
+.consent {
+  border: 1.5px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 0.5rem 1rem 1rem;
+  margin: 1rem 0;
+  background: var(--surface);
+}
+
+.consent h2 {
+  margin-top: 0.4rem;
+  font-size: 1.15rem;
+}
+
+.consent-notice,
+.report-notice {
+  border-left: 4px solid var(--caution-rule);
+  background: var(--caution-bg);
+  padding: 0.6rem 0.9rem;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.95rem;
+}
+
+.terms-full h3 {
+  font-size: 1rem;
+}
+
+.consent-choices {
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 0.4rem 0.9rem 0.8rem;
+  margin-top: 0.8rem;
+}
+
+.consent-choices legend {
+  font-weight: 700;
+  padding: 0 0.3rem;
+}
+
+.consent-done,
+.consent-static {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  margin: 0.5rem 0;
+}
+
+.utc-preview {
+  margin: 0.8rem 0;
+  padding: 0.55rem 0.8rem;
+  border-radius: 8px;
+  background: var(--surface-2);
+  font-size: 0.95rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.utc-preview.tone-warn {
+  background: var(--caution-bg);
+  border-left: 4px solid var(--caution-rule);
+}
+
+.indent {
+  margin-left: 1.7rem;
+}
+
+.report-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.8rem;
+  margin: 0.8rem 0 1rem;
+  font-size: 0.92rem;
+}
+
+.report-part {
+  border-top: 1px solid var(--rule);
+  padding-top: 0.4rem;
+  margin-top: 1.4rem;
+  scroll-margin-top: 1rem;
+}
+
+.report-part h3 {
+  font-size: 1.2rem;
+}
+
+.report-always {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 0.4rem 1rem 0.8rem;
+}
+
+.report-item h4 {
+  margin-bottom: 0.2rem;
+}
+
+.report-item p {
+  margin: 0.2rem 0 0.4rem;
+}
+
+.reflect-area h4 {
+  font-size: 1.05rem;
+  margin-top: 1.4rem;
+}
+
+.reflect-item {
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 0.5rem 0.9rem 0.8rem;
+  margin: 0.6rem 0;
+  background: var(--surface);
+}
+
+.reflect-item legend {
+  font-weight: 700;
+  padding: 0 0.3rem;
+  line-height: 1.6;
+}
+
+.reflect-answers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.3rem 0 0.5rem;
+}
+
+.radio-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 0.15rem 0.75rem;
+  min-height: 40px;
+  cursor: pointer;
+}
+
+.radio-pill:has(input:checked) {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.note,
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--ink-2);
+  margin-top: 0.4rem;
+}
+
+.note textarea,
+.field input,
+.ask-form textarea {
+  font: inherit;
+  font-weight: 400;
+  font-size: 1rem;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--center-stroke);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--ink);
+  width: 100%;
+  min-height: 44px;
+}
+
+.summary-card.is-unsure {
+  border-style: dashed;
+  border-color: var(--caution-rule);
+}
+
+.unsure-tag {
+  font-size: 0.78rem;
+  color: var(--ink-2);
+  border: 1px dashed var(--caution-rule);
+  border-radius: 4px;
+  display: inline-block;
+  padding: 0 0.4rem;
+}
+
+.ask-form {
+  display: grid;
+  gap: 0.4rem;
+  max-width: 40rem;
+}
+
+.ask-form label {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.ask-form .btn {
+  justify-self: start;
+}
+
+.ask-answer {
+  margin-top: 1rem;
+  padding: 0.7rem 1rem;
+  border-left: 4px solid var(--accent);
+  background: var(--info-bg);
+  border-radius: 0 8px 8px 0;
+}
+
+.ask-answer.is-crisis {
+  border-left-color: var(--caution-rule);
+  background: var(--caution-bg);
+  font-weight: 700;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1rem;
+  margin: 0.6rem 0;
+}
+
+table.registry {
+  min-width: 56rem;
+  font-size: 0.88rem;
+}
+
+.data-controls {
+  border-top: 1px solid var(--rule);
+  padding-top: 0.5rem;
+}
+
+/* ---------- 圖像與圖解 ---------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 300px);
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.hero-wheel {
+  margin: 0;
+  display: grid;
+  gap: 0.4rem;
+  justify-items: center;
+}
+
+.hero-wheel figcaption {
+  display: grid;
+  gap: 0.2rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.hero-now {
+  font-weight: 700;
+}
+
+.gate-wheel {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+}
+
+.gw-gate path {
+  fill: var(--surface);
+  stroke: var(--rule);
+  stroke-width: 0.8;
+}
+
+.gw-gate.is-alt path {
+  fill: var(--surface-2);
+}
+
+.gw-gate text {
+  font-size: 9.5px;
+  fill: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+}
+
+.gw-gate.is-sun path {
+  fill: var(--accent);
+}
+
+.gw-gate.is-sun text {
+  fill: var(--accent-ink);
+  font-weight: 700;
+}
+
+.gw-gate.is-earth path {
+  fill: var(--accent-soft);
+  stroke: var(--accent);
+  stroke-width: 1.5;
+}
+
+.gw-gate.is-earth text {
+  font-weight: 700;
+  fill: var(--ink);
+}
+
+.gw-signs line,
+.gw-signs circle {
+  stroke: var(--rule);
+  stroke-width: 0.8;
+  fill: none;
+}
+
+.gw-signs text {
+  font-size: 8px;
+  fill: var(--muted);
+}
+
+.gw-marker polygon {
+  fill: var(--accent);
+}
+
+.gw-silhouette polygon {
+  fill: none;
+  stroke: var(--center-stroke);
+  stroke-width: 4;
+  opacity: 0.45;
+  stroke-linejoin: round;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .gate-wheel {
+    max-width: min(300px, 80vw);
+  }
+}
+
+.flow-wrap {
+  margin: 0.5rem 0 0;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 0.75rem;
+}
+
+.flow-figure {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.flow-figure.is-wide {
+  aspect-ratio: 860 / 250;
+}
+
+.flow-figure.is-narrow {
+  display: none;
+  aspect-ratio: 360 / 560;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+  .flow-figure.is-wide {
+    display: none;
+  }
+  .flow-figure.is-narrow {
+    display: block;
+  }
+}
+
+.flow-box rect {
+  fill: var(--bg);
+  stroke: var(--center-stroke);
+  stroke-width: 1.5;
+}
+
+.flow-box.tone-personality rect {
+  stroke: var(--line-on);
+  stroke-width: 2.5;
+}
+
+.flow-box.tone-design rect {
+  stroke: var(--design);
+  stroke-width: 2.5;
+}
+
+.flow-step {
+  font-size: 13px;
+  font-weight: 700;
+  fill: var(--accent);
+}
+
+.flow-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  fill: var(--ink);
+}
+
+.flow-line {
+  font-size: 12px;
+  fill: var(--ink-2);
+}
+
+.flow-edge {
+  fill: none;
+  stroke: var(--center-stroke);
+  stroke-width: 1.5;
+}
+
+.flow-arrowhead {
+  fill: var(--center-stroke);
+}
+
+.centers-atlas {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 0.75rem;
+}
+
+.centers-atlas li {
+  margin: 0;
+}
+
+.atlas-card {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: start;
+  padding: 0.75rem;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  color: var(--ink);
+  text-decoration: none;
+  height: 100%;
+}
+
+.atlas-card:hover,
+.atlas-card:focus-visible {
+  border-color: var(--accent);
+}
+
+.atlas-text {
+  display: grid;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.atlas-name {
+  font-weight: 700;
+}
+
+.atlas-roles {
+  font-size: 0.82rem;
+  color: var(--accent);
+}
+
+.atlas-summary {
+  font-size: 0.9rem;
+  color: var(--ink-2);
+  line-height: 1.6;
+}
+
+.center-glyph {
+  display: inline-block;
+  line-height: 0;
+  vertical-align: middle;
+}
+
+.center-glyph svg {
+  display: block;
+  height: auto;
+}
+
+.glyph-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.2rem 0.6rem;
+}
+
+.report-item.has-glyph {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  column-gap: 0.75rem;
+}
+
+.report-item.has-glyph > .center-glyph {
+  grid-row: 1 / span 3;
+  margin-top: 0.4rem;
+}
+
+.report-item.has-glyph > :not(.center-glyph) {
+  grid-column: 2;
+}
+
+.timeline-wrap {
+  margin: 0.5rem 0;
+}
+
+.timeline-scroll {
+  overflow-x: auto;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  padding: 0.5rem;
+}
+
+.timeline-figure {
+  display: block;
+  width: 100%;
+  min-width: 560px;
+  height: auto;
+}
+
+.tl-tick line {
+  stroke: var(--rule);
+  stroke-width: 1;
+}
+
+.tl-tick text {
+  font-size: 10.5px;
+  fill: var(--muted);
+}
+
+.tl-tick.is-marker line {
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+
+.tl-tick.is-marker text {
+  fill: var(--accent);
+  font-weight: 700;
+}
+
+.tl-label {
+  font-size: 12px;
+  fill: var(--ink-2);
+}
+
+.tl-row.is-summary .tl-label {
+  font-weight: 700;
+  fill: var(--ink);
+}
+
+.tl-seg rect {
+  fill: var(--surface-2);
+  stroke: var(--center-stroke);
+  stroke-width: 0.6;
+}
+
+.tl-seg.is-alt rect {
+  fill: var(--tube);
+}
+
+.tl-seg text {
+  font-size: 11px;
+  fill: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.lazy-mount[aria-busy='true'] {
+  background: var(--surface-2);
+  border-radius: var(--radius);
+}
+
+.report-cover {
+  margin: 0.5rem 0 1rem;
+}
+
+.cover-frame svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 800 / 460;
+}

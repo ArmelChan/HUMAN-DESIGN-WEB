@@ -1,4 +1,5 @@
 import { Explorer } from '../components/Explorer';
+import { HeroWheel } from '../figures/GateWheel';
 import { replaceHash, type Route } from '../lib/router';
 import { decodeSelection, encodeSelection, type Selection } from '../lib/selection';
 
@@ -11,7 +12,8 @@ export function HomePage({ route }: { route: Route }) {
 
   return (
     <div className="page page-wide">
-      <div className="intro-strip">
+      <div className="intro-strip hero">
+        <div className="hero-text">
         <h1>
           人類圖圖解
           <span className="h1-sub">從 BodyGraph 的九個中心開始認識人類圖</span>
@@ -19,6 +21,12 @@ export function HomePage({ route }: { route: Route }) {
         <p>
           點選圖中的形狀、連線或數字，右側（手機在下方）會說明它在人類圖體系中的意思。這張是結構圖，只畫出所有可能的中心、通道與閘門，<strong>不代表任何人的人類圖</strong>。
         </p>
+        <p className="hero-links">
+          <a className="btn" href="#/chart">產生自己的圖</a>
+          <a className="btn btn-quiet" href="#/intro">先看一張圖怎麼讀</a>
+        </p>
+        </div>
+        <HeroWheel />
       </div>
 
       <Explorer
